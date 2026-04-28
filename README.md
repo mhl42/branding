@@ -50,5 +50,10 @@ png/                  Pre-rendered raster exports at practical sizes
 
 ## License
 
-Brand assets are © Beyer Ventures S.L. and licensed for use only by Mostly Harmless.
-Inter typography © The Inter Project Authors, SIL Open Font License 1.1.
+See [`LICENSE`](./LICENSE) for the full terms. Short version:
+
+- **Brand assets** (the MHL · 42 mark, wordmark, name "Mostly Harmless", and all derivatives) are © Beyer Ventures, S.L. and reserved. You may reference them editorially; you may not use them to represent another entity, product, or service.
+- **Code and document structure** (HTML/CSS in `brand-sheet.html` and similar files) is MIT-licensed.
+- **Inter typography** © The Inter Project Authors, SIL Open Font License 1.1.
+
+Questions, partnerships, trademark matters: info@mhl42.ai
