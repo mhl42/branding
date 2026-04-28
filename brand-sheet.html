@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Mostly Harmless · MHL · 42 — Brand Sheet</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+<style>
+  :root{
+    --ink:#0E1116;
+    --paper:#FAF6EE;
+    --gold:#F5C518;
+    --line:rgba(14,17,22,.12);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink);
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.5; font-feature-settings: "cv11", "ss01", "ss03";}
+  header{padding:56px 56px 24px;border-bottom:1px solid var(--line)}
+  header h1{margin:0;font-size:34px;letter-spacing:-.01em}
+  header p{margin:6px 0 0;color:#475;max-width:62ch}
+  section{padding:40px 56px;border-bottom:1px solid var(--line)}
+  section h2{margin:0 0 4px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#7a7a7a}
+  section h3{margin:4px 0 22px;font-size:24px;letter-spacing:-.01em}
+  .grid{display:grid;gap:18px}
+  .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+  .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .grid.cols-4{grid-template-columns:repeat(4,1fr)}
+  .tile{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .tile.ink{background:var(--ink)}
+  .tile .frame{display:grid;place-items:center;padding:28px;min-height:160px}
+  .tile .frame img{max-width:100%;max-height:200px;height:auto;display:block}
+  .tile .label{padding:10px 14px;border-top:1px solid var(--line);font-size:12px;color:#475;display:flex;justify-content:space-between;gap:8px;background:#fff}
+  .tile.ink .label{background:var(--paper);border-color:transparent}
+  .tile .label code{font-family: ui-monospace, Menlo, monospace; font-size:11px; color:#222}
+  .tile .label a{color:#0E1116;text-decoration:none;border-bottom:1px dotted #999}
+  .tile .label a:hover{border-bottom-style:solid}
+  .swatch{height:120px;border-radius:14px;display:flex;align-items:flex-end;padding:14px;color:#fff;font-size:13px;border:1px solid var(--line)}
+  .swatch.dark{color:#fff}
+  .swatch.light{color:#0E1116}
+  .swatch b{display:block;font-weight:700;font-size:14px}
+  .swatch span{opacity:.8;font-family: ui-monospace, Menlo, monospace; font-size:12px}
+  .typeline{display:flex;align-items:baseline;gap:18px;border-bottom:1px dashed var(--line);padding:14px 0}
+  .typeline:last-child{border-bottom:none}
+  .typeline .label{width:200px;font-size:12px;color:#7a7a7a;letter-spacing:.06em;text-transform:uppercase}
+  .typeline .sample{flex:1}
+  .rules{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .rule{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff}
+  .rule.do{border-color:rgba(0,176,90,.4); background:rgba(0,176,90,.04)}
+  .rule.dont{border-color:rgba(220,53,69,.35); background:rgba(220,53,69,.04)}
+  .rule h4{margin:0 0 6px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+  .rule p{margin:0;color:#475;font-size:14px}
+  footer{padding:28px 56px 56px;color:#666;font-size:13px}
+  @media (max-width: 900px){
+    header,section,footer{padding-left:20px;padding-right:20px}
+    .grid.cols-3,.grid.cols-4{grid-template-columns:repeat(2,1fr)}
+    .typeline{flex-direction:column;gap:6px}
+    .typeline .label{width:auto}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Mostly Harmless · MHL · 42</h1>
+  <p>Brand sheet for <strong>mhl42.ai</strong> — AI security consulting, agentic AI, education, safety, intelligent apps. All assets live alongside this file in <code>/branding</code>. SVG is canonical; PNG exports are in <code>/png</code> for tools that need raster.</p>
+</header>
+
+<!-- =============== COLORS =============== -->
+<section>
+  <h2>01 · Color</h2>
+  <h3>Three colors. That's the system.</h3>
+  <div class="grid cols-3">
+    <div>
+      <div class="swatch dark" style="background:#0E1116">
+        <div><b>Ink</b><span>#0E1116</span></div>
+      </div>
+      <p style="margin:10px 2px 0;font-size:13px;color:#475">Primary. Strokes, type, dark backgrounds.</p>
+    </div>
+    <div>
+      <div class="swatch light" style="background:#FAF6EE;border-color:rgba(14,17,22,.18)">
+        <div><b>Paper</b><span>#FAF6EE</span></div>
+      </div>
+      <p style="margin:10px 2px 0;font-size:13px;color:#475">Bright background. Warmer than pure white — closer to a book page.</p>
+    </div>
+    <div>
+      <div class="swatch light" style="background:#F5C518">
+        <div><b>Don't-Panic Gold</b><span>#F5C518</span></div>
+      </div>
+      <p style="margin:10px 2px 0;font-size:13px;color:#475">Single accent — the dot, accent rules, link underlines, callouts. Use sparingly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== TYPOGRAPHY =============== -->
+<section>
+  <h2>02 · Typography</h2>
+  <h3>Inter — by Rasmus Andersson, free forever.</h3>
+  <p style="color:#475;font-size:14px;max-width:62ch;margin:0 0 22px">Used in every SVG (text outlined to paths so files are self-contained) and in this sheet via Google Fonts. Weights: 400 / 500 / 700 / 800. <a href="https://rsms.me/inter/" style="color:#0E1116">rsms.me/inter</a></p>
+  <div>
+    <div class="typeline">
+      <div class="label">Display / 800</div>
+      <div class="sample" style="font-weight:800;font-size:48px;letter-spacing:-1.5px">Mostly Harmless</div>
+    </div>
+    <div class="typeline">
+      <div class="label">Heading / 700</div>
+      <div class="sample" style="font-weight:700;font-size:28px;letter-spacing:-.5px">AI security consulting · agentic AI</div>
+    </div>
+    <div class="typeline">
+      <div class="label">Body / 400</div>
+      <div class="sample" style="font-size:16px">We design, ship, and audit AI systems — from agents that take real actions to the safety surfaces around them.</div>
+    </div>
+    <div class="typeline">
+      <div class="label">Caption / 500 tracked</div>
+      <div class="sample" style="font-weight:500;font-size:13px;letter-spacing:3px;text-transform:uppercase">Mostly Harmless</div>
+    </div>
+    <div class="typeline">
+      <div class="label">Mono</div>
+      <div class="sample" style="font-family:ui-monospace,Menlo,monospace;font-size:14px">mhl42.ai · stefan@mhl42.ai · &lt;MHL/42&gt;</div>
+    </div>
+  </div>
+  <p style="margin-top:20px;color:#475;font-size:13px;max-width:62ch">Current system fallback (Inter / system-ui) ships everywhere and renders fine. When the brand graduates, swap for a tighter geometric grotesque — Söhne, GT America, or Neue Haas Grotesk Display — at the same weights (800 / 700 / 500 / 400).</p>
+</section>
+
+<!-- =============== LOGO MARK =============== -->
+<section>
+  <h2>03 · Logo · Mark</h2>
+  <h3>Element 42 — periodic tile.</h3>
+  <div class="grid cols-2">
+    <div class="tile">
+      <div class="frame"><img src="logos/01-mark-with-phrase-light.svg" alt=""/></div>
+      <div class="label"><span>Mark · with phrase · light</span><a href="logos/01-mark-with-phrase-light.svg" download>SVG</a></div>
+    </div>
+    <div class="tile ink">
+      <div class="frame"><img src="logos/02-mark-with-phrase-dark.svg" alt=""/></div>
+      <div class="label"><span>Mark · with phrase · dark</span><a href="logos/02-mark-with-phrase-dark.svg" download>SVG</a></div>
+    </div>
+    <div class="tile">
+      <div class="frame"><img src="logos/03-mark-no-phrase-light.svg" alt=""/></div>
+      <div class="label"><span>Mark · no phrase · light</span><a href="logos/03-mark-no-phrase-light.svg" download>SVG</a></div>
+    </div>
+    <div class="tile ink">
+      <div class="frame"><img src="logos/04-mark-no-phrase-dark.svg" alt=""/></div>
+      <div class="label"><span>Mark · no phrase · dark</span><a href="logos/04-mark-no-phrase-dark.svg" download>SVG</a></div>
+    </div>
+    <div class="tile">
+      <div class="frame"><img src="logos/05-mark-mono-black.svg" alt=""/></div>
+      <div class="label"><span>Mono black · print / engrave</span><a href="logos/05-mark-mono-black.svg" download>SVG</a></div>
+    </div>
+    <div class="tile ink">
+      <div class="frame"><img src="logos/06-mark-mono-white.svg" alt=""/></div>
+      <div class="label"><span>Mono white · embroidery</span><a href="logos/06-mark-mono-white.svg" download>SVG</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LOCKUPS =============== -->
+<section>
+  <h2>04 · Logo · Lockups</h2>
+  <h3>Mark + wordmark, horizontal and vertical.</h3>
+  <div class="grid cols-2">
+    <div class="tile">
+      <div class="frame"><img src="logos/07-lockup-horizontal-light.svg" alt=""/></div>
+      <div class="label"><span>Horizontal lockup · light</span><a href="logos/07-lockup-horizontal-light.svg" download>SVG</a></div>
+    </div>
+    <div class="tile ink">
+      <div class="frame"><img src="logos/08-lockup-horizontal-dark.svg" alt=""/></div>
+      <div class="label"><span>Horizontal lockup · dark</span><a href="logos/08-lockup-horizontal-dark.svg" download>SVG</a></div>
+    </div>
+    <div class="tile">
+      <div class="frame"><img src="logos/09-lockup-vertical-light.svg" alt=""/></div>
+      <div class="label"><span>Vertical lockup · light</span><a href="logos/09-lockup-vertical-light.svg" download>SVG</a></div>
+    </div>
+    <div class="tile ink">
+      <div class="frame"><img src="logos/10-lockup-vertical-dark.svg" alt=""/></div>
+      <div class="label"><span>Vertical lockup · dark</span><a href="logos/10-lockup-vertical-dark.svg" download>SVG</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WORDMARK =============== -->
+<section>
+  <h2>05 · Wordmark</h2>
+  <h3>For places the mark can't go.</h3>
+  <div class="grid cols-2">
+    <div class="tile">
+      <div class="frame"><img src="logos/11-wordmark-with-phrase-light.svg" alt=""/></div>
+      <div class="label"><span>Wordmark · with phrase · light</span><a href="logos/11-wordmark-with-phrase-light.svg" download>SVG</a></div>
+    </div>
+    <div class="tile ink">
+      <div class="frame"><img src="logos/12-wordmark-with-phrase-dark.svg" alt=""/></div>
+      <div class="label"><span>Wordmark · with phrase · dark</span><a href="logos/12-wordmark-with-phrase-dark.svg" download>SVG</a></div>
+    </div>
+    <div class="tile">
+      <div class="frame"><img src="logos/13-wordmark-no-phrase-light.svg" alt=""/></div>
+      <div class="label"><span>Wordmark · no phrase · light</span><a href="logos/13-wordmark-no-phrase-light.svg" download>SVG</a></div>
+    </div>
+    <div class="tile ink">
+      <div class="frame"><img src="logos/14-wordmark-no-phrase-dark.svg" alt=""/></div>
+      <div class="label"><span>Wordmark · no phrase · dark</span><a href="logos/14-wordmark-no-phrase-dark.svg" download>SVG</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== ICONS =============== -->
+<section>
+  <h2>06 · App Icons &amp; Favicons</h2>
+  <h3>Square containers — home screen, browser tab, social avatar.</h3>
+  <div class="grid cols-4">
+    <div class="tile">
+      <div class="frame"><img src="icons/app-icon-gold-512.svg" alt="" style="max-height:160px"/></div>
+      <div class="label"><span>App icon · gold</span><a href="icons/app-icon-gold-512.svg" download>SVG</a></div>
+    </div>
+    <div class="tile">
+      <div class="frame"><img src="icons/app-icon-ink-512.svg" alt="" style="max-height:160px"/></div>
+      <div class="label"><span>App icon · ink</span><a href="icons/app-icon-ink-512.svg" download>SVG</a></div>
+    </div>
+    <div class="tile">
+      <div class="frame">
+        <div style="display:flex;gap:14px;align-items:center">
+          <img src="icons/favicon.svg" width="64" height="64" alt=""/>
+          <img src="icons/favicon.svg" width="32" height="32" alt=""/>
+          <img src="icons/favicon.svg" width="16" height="16" alt=""/>
+        </div>
+      </div>
+      <div class="label"><span>Favicon · dark · 16/32/64</span><a href="icons/favicon.svg" download>SVG</a></div>
+    </div>
+    <div class="tile">
+      <div class="frame">
+        <div style="display:flex;gap:14px;align-items:center">
+          <img src="icons/favicon-light.svg" width="64" height="64" alt=""/>
+          <img src="icons/favicon-light.svg" width="32" height="32" alt=""/>
+          <img src="icons/favicon-light.svg" width="16" height="16" alt=""/>
+        </div>
+      </div>
+      <div class="label"><span>Favicon · outline · 16/32/64</span><a href="icons/favicon-light.svg" download>SVG</a></div>
+    </div>
+  </div>
+  <p style="margin-top:14px;color:#475;font-size:13px">PNG exports at 16, 32, 64, 192, 256, 512, 1024 are in <code>/png/icons/</code>.</p>
+</section>
+
+<!-- =============== SOCIAL =============== -->
+<section>
+  <h2>07 · Social &amp; Email</h2>
+  <h3>Banners ready to upload.</h3>
+  <div class="grid">
+    <div class="tile">
+      <div class="frame" style="padding:0"><img src="social/og-image-1200x630.svg" alt="" style="max-height:none;width:100%;display:block"/></div>
+      <div class="label"><span>OG image · 1200×630 · used by Twitter cards, Slack unfurls, Discord, LinkedIn previews</span>
+        <span><a href="social/og-image-1200x630.svg" download>SVG</a> · <a href="png/social/og-image-1200x630-1200.png" download>PNG</a> · <a href="png/social/og-image-1200x630-2400.png" download>2x</a></span></div>
+    </div>
+    <div class="tile">
+      <div class="frame" style="padding:0"><img src="social/linkedin-banner-1584x396.svg" alt="" style="max-height:none;width:100%;display:block"/></div>
+      <div class="label"><span>LinkedIn banner · 1584×396 · personal profile cover</span>
+        <span><a href="social/linkedin-banner-1584x396.svg" download>SVG</a> · <a href="png/social/linkedin-banner-1584x396-1584.png" download>PNG</a></span></div>
+    </div>
+    <div class="tile">
+      <div class="frame" style="padding:0"><img src="social/x-header-1500x500.svg" alt="" style="max-height:none;width:100%;display:block"/></div>
+      <div class="label"><span>X / Twitter header · 1500×500</span>
+        <span><a href="social/x-header-1500x500.svg" download>SVG</a> · <a href="png/social/x-header-1500x500-1500.png" download>PNG</a></span></div>
+    </div>
+    <div class="tile">
+      <div class="frame" style="padding:0"><img src="social/email-signature-600x180.svg" alt="" style="max-height:none;width:100%;display:block"/></div>
+      <div class="label"><span>Email signature · 600×180 · drop into Gmail/Apple Mail signature</span>
+        <span><a href="social/email-signature-600x180.svg" download>SVG</a> · <a href="png/social/email-signature-600x180-1200.png" download>PNG 2x</a></span></div>
+    </div>
+    <div class="tile">
+      <div class="frame"><img src="social/avatar-square-512.svg" alt="" style="max-height:200px"/></div>
+      <div class="label"><span>Square avatar · 512×512 · Slack, Discord, GitHub org, X profile</span>
+        <span><a href="social/avatar-square-512.svg" download>SVG</a> · <a href="png/social/avatar-square-512-512.png" download>PNG</a></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== USAGE =============== -->
+<section>
+  <h2>08 · Usage</h2>
+  <h3>Do, don't.</h3>
+  <div class="rules">
+    <div class="rule do">
+      <h4>Do</h4>
+      <p>Use the mark with the phrase on first contact (web hero, deck cover, business card front), then drop the phrase for repeat appearances (favicon, app chrome, footer).</p>
+    </div>
+    <div class="rule dont">
+      <h4>Don't</h4>
+      <p>Don't recolor the mark with anything but ink, paper, or gold. Don't add a shadow. Don't put the gold dot anywhere except the top-right of the tile.</p>
+    </div>
+    <div class="rule do">
+      <h4>Do</h4>
+      <p>Give the tile clear space equal to the height of the "42" caption on every side.</p>
+    </div>
+    <div class="rule dont">
+      <h4>Don't</h4>
+      <p>Don't stretch, rotate, or fill the tile interior. The tile is always an outline.</p>
+    </div>
+    <div class="rule do">
+      <h4>Do</h4>
+      <p>Use the gold accent for one element per surface — the dot, a callout rule, or a link underline. Never multiple at once.</p>
+    </div>
+    <div class="rule dont">
+      <h4>Don't</h4>
+      <p>Don't typeset "Mostly Harmless" in italic or all-caps without the spaced-out tracking shown in this sheet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FILE INDEX =============== -->
+<section>
+  <h2>09 · File index</h2>
+  <h3>Where things live.</h3>
+  <pre style="background:#0E1116;color:#FAF6EE;padding:22px;border-radius:14px;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.7;overflow:auto">/branding
+├── brand-sheet.html        ← this page
+├── logos/                  ← 14 SVGs (mark, lockups, wordmark · light/dark/mono)
+├── icons/                  ← app icons + favicons (SVG)
+├── social/                 ← OG image, LinkedIn, X, email sig, avatar (SVG)
+└── png/
+    ├── logos/              ← logo PNGs at 256–2000px
+    ├── icons/              ← favicon PNGs at 16/32/64/192, app icons at 256/512/1024
+    └── social/             ← banner PNGs at native + 2x</pre>
+</section>
+
+<footer>
+  <p>SVGs ship Inter as <strong>outlined paths</strong> — they render identically anywhere with no font dependency, even when emailed, embedded in PDFs, or imported into Figma. PNGs are pre-rendered at the practical sizes for tools that don't accept SVG. To regenerate everything, run <code>generate_brand_inter.py</code> followed by <code>export_pngs.py</code>.</p>
+</footer>
+
+</body>
+</html>
