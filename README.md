@@ -8,7 +8,7 @@ Open `brand-sheet.html` in a browser for an interactive index of every asset wit
 
 ```
 brand-sheet.html      Interactive index — colors, typography, every mark, download links
-logos/                14 SVGs — mark, lockups, wordmark · light / dark / mono
+logos/                17 SVGs — mark, lockups, name lockup, wordmark · light / dark / mono / white
 icons/                App icons (gold + ink, 512px) and favicons (dark + outline)
 social/               OG image, LinkedIn cover, X header, email signature, square avatar
 png/                  Pre-rendered raster exports at practical sizes
