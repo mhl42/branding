@@ -11,7 +11,6 @@ brand-sheet.html      Interactive index — colors, typography, every mark, down
 logos/                14 SVGs — mark, lockups, wordmark · light / dark / mono
 icons/                App icons (gold + ink, 512px) and favicons (dark + outline)
 social/               OG image, LinkedIn cover, X header, email signature, square avatar
-mascot/               Ford — character used for educational and video content
 png/                  Pre-rendered raster exports at practical sizes
   ├── logos/          256–2000 px
   ├── icons/          16, 32, 64, 192, 256, 512, 1024 px
@@ -30,30 +29,6 @@ png/                  Pre-rendered raster exports at practical sizes
 ## Typography
 
 [Inter](https://rsms.me/inter/) by Rasmus Andersson — open source (SIL Open Font License 1.1). Every text element in the SVGs is **outlined to vector paths**, so files render identically anywhere with no font dependency.
-
-## Mascot — Ford
-
-Stylised character used as the host for **video content, training material, and educational explainers**. Named after Ford Prefect, the original Hitchhiker's guide who's not actually from around here.
-
-| File | Use |
-|---|---|
-| `mascot/ford.png` | Full-body, 1024 × 1536. Source asset for video intros, full-page hero illustrations, social posts. |
-| `mascot/ford-headshot.png` | 512 × 512 head-and-shoulders crop. Avatar use — video host card, podcast art, presenter byline. |
-| `mascot/ford-halfbody.png` | 720 × 768 chest-up crop. Mid-size hero placement, slide title cards. |
-
-**Where to use Ford**
-- Educational and training video intros / outros.
-- Presenter avatar in courseware and video thumbnails.
-- "Learn" or "Watch" sections of marketing material when there's actual video content to anchor.
-- Conference talk slides, where appropriate.
-
-**Where not to use Ford**
-- The `mhl42.ai` website hero — the cosmic minimalist aesthetic should not compete with a 3D character.
-- Across multiple sections of any single piece of content — Ford appears once, makes his point, leaves.
-- On light backgrounds without first checking edge contrast — he was rendered against dark and the hair edge can disappear on cream.
-
-**Direction**
-Black suit, sunglasses, slight smirk. Quiet competence. The visual cue is *"I notice things you don't notice"* — apt for a security-focused brand. Avoid expressions or poses that read as overtly cheerful or cartoonish. Ford is calm.
 
 ## Quick-start picks
 
