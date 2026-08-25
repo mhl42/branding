@@ -1,0 +1,259 @@
+/* ==========================================================================
+   MHL · 42 — Design Tokens
+   Three colors. Inter. That's the system.
+   ========================================================================== */
+
+/* ---------- Type · Inter, self-hosted (offline-safe) -------------------- */
+/* Files: fonts/Inter-{Regular,Medium,Bold,ExtraBold}.woff2          */
+/* Source: github.com/rsms/inter — SIL OFL 1.1                              */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Inter-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/Inter-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/Inter-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/Inter-ExtraBold.woff2") format("woff2");
+}
+
+:root {
+  /* ---------- Color · Brand primitives -------------------------------- */
+  --ink:                 #0E1116;        /* Primary — strokes, type, dark bg */
+  --paper:               #FAF6EE;        /* Warm off-white background */
+  --gold:                #F5C518;        /* Don't-Panic Gold — single accent */
+
+  /* ---------- Color · Surface scale (warm paper-tinted neutrals) ------ */
+  --paper-50:            #FFFCF5;
+  --paper-100:           #FAF6EE;
+  --paper-200:           #F1ECE0;
+  --paper-300:           #E4DECF;
+  --paper-400:           #C9C3B5;
+
+  --ink-50:              #2A2E36;
+  --ink-100:             #1B1F26;
+  --ink-200:             #14181F;
+  --ink-300:             #0E1116;
+  --ink-400:             #07090C;
+
+  /* ---------- Color · Foreground / background semantics --------------- */
+  --bg-1:                var(--paper);              /* default page */
+  --bg-2:                var(--paper-200);          /* card / inset */
+  --bg-3:                var(--paper-300);          /* divider tone */
+  --bg-inverse:          var(--ink);
+
+  --fg-1:                var(--ink);                /* primary text */
+  --fg-2:                #475;                      /* secondary text — `#475566`-ish */
+  --fg-3:                #7a7a7a;                   /* eyebrow / muted */
+  --fg-inverse:          var(--paper);
+
+  --line:                rgba(14, 17, 22, .12);
+  --line-strong:         rgba(14, 17, 22, .22);
+  --line-on-ink:         rgba(250, 246, 238, .14);
+
+  /* ---------- Color · Accents & state --------------------------------- */
+  --accent:              var(--gold);
+  --accent-soft:         rgba(245, 197, 24, .18);
+  --link:                var(--ink);
+  --link-underline:      var(--gold);
+  --do:                  rgba(0, 176, 90, 1);
+  --do-soft:             rgba(0, 176, 90, .04);
+  --dont:                rgba(220, 53, 69, 1);
+  --dont-soft:           rgba(220, 53, 69, .04);
+
+  /* ---------- Type · Families ----------------------------------------- */
+  --font-sans:           "Inter", ui-sans-serif, system-ui, -apple-system,
+                         "Helvetica Neue", Arial, sans-serif;
+  --font-mono:           ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                         "Liberation Mono", monospace;
+  --font-display:        var(--font-sans);
+
+  /* ---------- Type · OpenType features (Inter-specific) --------------- */
+  --font-features:       "cv11", "ss01", "ss03"; /* @kind font */
+
+  /* ---------- Type · Weight scale ------------------------------------- */
+  --w-regular:           400;   /* @kind font */
+  --w-medium:            500;   /* @kind font */
+  --w-bold:              700;   /* @kind font */
+  --w-black:             800;   /* @kind font */
+
+  /* ---------- Type · Size scale --------------------------------------- */
+  --fs-display:          48px;
+  --fs-h1:               34px;
+  --fs-h2:               28px;
+  --fs-h3:               24px;
+  --fs-h4:               18px;
+  --fs-body:             16px;
+  --fs-small:            14px;
+  --fs-caption:          13px;
+  --fs-micro:            11px;
+
+  /* ---------- Type · Line height -------------------------------------- */
+  --lh-tight:            1.1;   /* @kind font */
+  --lh-snug:             1.25;  /* @kind font */
+  --lh-normal:           1.5;   /* @kind font */
+  --lh-relaxed:          1.65;  /* @kind font */
+
+  /* ---------- Type · Letter-spacing ----------------------------------- */
+  --ls-display:          -.015em; /* @kind font */
+  --ls-heading:          -.01em;  /* @kind font */
+  --ls-body:              0;      /* @kind font */
+  --ls-eyebrow:          .18em;   /* @kind font */
+  --ls-tracked:          .22em;   /* @kind font */
+
+  /* ---------- Spacing scale (4px base) -------------------------------- */
+  --s-1:                 4px;
+  --s-2:                 8px;
+  --s-3:                 12px;
+  --s-4:                 16px;
+  --s-5:                 20px;
+  --s-6:                 24px;
+  --s-8:                 32px;
+  --s-10:                40px;
+  --s-14:                56px;       /* Header gutter */
+  --s-16:                64px;
+  --s-20:                80px;
+
+  /* ---------- Radii --------------------------------------------------- */
+  --r-sm:                6px;
+  --r-md:                10px;
+  --r-lg:                14px;        /* Tile / card default */
+  --r-xl:                22px;
+  --r-pill:              999px;
+
+  /* ---------- Elevation (shadows are RARE — outline first) ------------ */
+  --shadow-none:         0 0 #0000;
+  --shadow-1:            0 1px 0 rgba(14, 17, 22, .04),
+                         0 1px 2px rgba(14, 17, 22, .04);
+  --shadow-2:            0 4px 14px rgba(14, 17, 22, .06);
+  --shadow-focus:        0 0 0 3px rgba(245, 197, 24, .35);
+
+  /* ---------- Motion -------------------------------------------------- */
+  --dur-fast:            120ms; /* @kind other */
+  --dur-base:            180ms; /* @kind other */
+  --dur-slow:            260ms; /* @kind other */
+  --ease-out:            cubic-bezier(.2, .7, .2, 1);   /* @kind other */
+  --ease-in-out:         cubic-bezier(.45, 0, .25, 1); /* @kind other */
+}
+
+/* ==========================================================================
+   Base / element-level type styles — semantic mapping
+   ========================================================================== */
+
+html, body {
+  background: var(--bg-1);
+  color: var(--fg-1);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  font-feature-settings: var(--font-features);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-weight: var(--w-black);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  margin: 0;
+}
+
+h2, .h2 {
+  font-weight: var(--w-bold);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-heading);
+  margin: 0;
+}
+
+h3, .h3 {
+  font-weight: var(--w-bold);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-heading);
+  margin: 0;
+}
+
+h4, .h4 {
+  font-weight: var(--w-medium);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-snug);
+  margin: 0;
+}
+
+p {
+  margin: 0 0 var(--s-4);
+  color: var(--fg-1);
+  text-wrap: pretty;
+}
+
+small, .small { font-size: var(--fs-small); color: var(--fg-2); }
+
+code, kbd, samp, .mono {
+  font-family: var(--font-mono);
+  font-size: .92em;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted color-mix(in oklab, var(--ink) 50%, transparent);
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+a:hover { border-bottom-style: solid; border-bottom-color: var(--gold); }
+
+/* Display: hero / cover slabs */
+.display {
+  font-weight: var(--w-black);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+}
+
+/* Eyebrow — section labels above titles */
+.eyebrow {
+  font-weight: var(--w-medium);
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+/* Tracked caption — the "MOSTLY HARMLESS" lock-up style */
+.caption-tracked {
+  font-weight: var(--w-medium);
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-tracked);
+  text-transform: uppercase;
+}
+
+/* Inverse surface — for ink-on-paper components placed on dark */
+.on-ink {
+  background: var(--bg-inverse);
+  color: var(--fg-inverse);
+}
+.on-ink a { color: var(--paper); }
+.on-ink .eyebrow { color: rgba(250, 246, 238, .55); }
+
+/* Selection — gold, used sparingly elsewhere */
+::selection { background: var(--gold); color: var(--ink); }

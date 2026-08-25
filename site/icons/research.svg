@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 440" role="img" aria-labelledby="title desc">
+<title id="title">Research</title>
+<desc id="desc">A radio telescope pointing at a distant signal.</desc>
+
+<defs>
+  
+</defs>
+
+<path class="line" d="M160 270 C210 172 292 154 374 222 C294 230 235 269 196 350 C174 330 160 303 160 270 Z"></path>
+<path class="line" d="M196 350 L148 414 h164 l-54 -88"></path>
+<path class="line" d="M166 392 l42 -42 l42 42 M208 350 v64 M250 392 l-42 22"></path>
+<circle class="line" cx="236" cy="326" r="24"></circle>
+<path class="line" stroke-dasharray="8 12" d="M270 260 L390 178 M286 282 L410 206 M252 242 L370 152"></path>
+<path class="accent" stroke-dasharray="12 14" d="M366 116 a86 86 0 0 1 86 86"></path>
+<path class="accent" stroke-dasharray="12 14" d="M366 154 a48 48 0 0 1 48 48"></path>
+<path class="accent-fill" d="M394 152 l12 34 l34 12 l-34 12 l-12 34 l-12 -34 l-34 -12 l34 -12 Z"></path>
+
+</svg>

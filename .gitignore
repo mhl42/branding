@@ -21,3 +21,6 @@ venv/
 # OS / temp
 *.tmp
 *.bak
+
+# Claude Code
+.claude/

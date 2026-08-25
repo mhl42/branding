@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Do / Don't" subtitle="Deck-review corrections — colour, dot, lockup, imagery, type floors" viewport="700x760" -->
+<html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .card { padding: 22px 24px; }
+  h4.section { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--fg-3); font-weight: 600; margin: 0 0 10px; }
+  .group + .group { margin-top: 18px; }
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .rule { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; background: #fff; }
+  .rule.do { border-color: rgba(0,176,90,.40); background: rgba(0,176,90,.04); }
+  .rule.dont { border-color: rgba(220,53,69,.35); background: rgba(220,53,69,.04); }
+  .rule h5 { margin: 0 0 4px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); font-weight: 600; }
+  .rule.do h5::before { content: "✓ "; color: #0a6b3a; }
+  .rule.dont h5::before { content: "✕ "; color: #8a1d2a; }
+  .rule p { margin: 0; font-size: 12.5px; color: #475; line-height: 1.45; text-wrap: pretty; }
+  .rule code { font-family: var(--font-mono); font-size: 11.5px; background: rgba(14,17,22,.06); padding: 1px 4px; border-radius: 4px; }
+</style></head>
+<body><div class="card">
+
+  <div class="group">
+    <h4 class="section">Colour & contrast</h4>
+    <div class="rules">
+      <div class="rule do"><h5>Do</h5><p>Body text on Ink is <code>rgba(250,246,238,.82)</code>. Headings only go to full Paper.</p></div>
+      <div class="rule dont"><h5>Don't</h5><p>Paper text on Gold. Gold is an accent surface — text on Gold is always Ink.</p></div>
+      <div class="rule do"><h5>Do</h5><p>When a card inverts to Ink, flip <em>every</em> descendant: body, list markers, em/strong, captions, chips, code.</p></div>
+      <div class="rule dont"><h5>Don't</h5><p>Override <code>strong</code> or <code>em</code> alone — they inherit the card colour. Override both, or neither.</p></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h4 class="section">Decorative gold dot</h4>
+    <div class="rules">
+      <div class="rule do"><h5>Do</h5><p>One dot per card, in chrome — top-right of tiles, threat tiles, channel tiles, code blocks.</p></div>
+      <div class="rule dont"><h5>Don't</h5><p>Place the dot over typography. If it would land within 16px of a glyph, drop it.</p></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h4 class="section">Logo / lockup</h4>
+    <div class="rules">
+      <div class="rule do"><h5>Do</h5><p>Ship <code>lockup-light.svg</code> + <code>lockup-dark.svg</code> as a pair. Switch on <code>body[data-theme]</code>.</p></div>
+      <div class="rule dont"><h5>Don't</h5><p>Recolour the lockup with <code>filter: invert()</code>. The tile uses <code>currentColor</code>; theme handles it.</p></div>
+      <div class="rule do"><h5>Do</h5><p>One lockup per slide. The cover carries the wordmark <em>or</em> the periodic tile.</p></div>
+      <div class="rule dont"><h5>Don't</h5><p>Pair the wordmark and the tile on the same slide.</p></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h4 class="section">Imagery & QR</h4>
+    <div class="rules">
+      <div class="rule do"><h5>Do</h5><p>Hardware / product photos: <code>aspect-ratio: 16/9</code> + <code>object-fit: contain</code> on an Ink panel.</p></div>
+      <div class="rule dont"><h5>Don't</h5><p>Crop product photos with <code>cover</code>. Avatars are fine with cover + 3px Ink border + 6px Gold offset.</p></div>
+      <div class="rule do"><h5>Do</h5><p>QR is a static inline SVG — Paper bg, Ink fg, mono caption below in uppercase tracking.</p></div>
+      <div class="rule dont"><h5>Don't</h5><p>Generate QR at runtime, or round the QR's own corners. Round the wrap instead.</p></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <h4 class="section">Type floors · 1920 × 1080</h4>
+    <div class="rules">
+      <div class="rule do"><h5>Do</h5><p>Body ≥ 24px · eyebrow ≥ 22px · stat numerals 80–96px. <code>text-wrap: pretty</code> on every paragraph.</p></div>
+      <div class="rule dont"><h5>Don't</h5><p>Shrink stat numerals to fit. Re-flow the layout instead.</p></div>
+    </div>
+  </div>
+
+</div></body></html>

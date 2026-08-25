@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Cards" subtitle="Border + 14px radius + label strip · no shadow" viewport="700x240" -->
+<html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .card { padding: 22px 24px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .tile { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .tile.ink { background: #0E1116; color: #FAF6EE; }
+  .tile .frame { padding: 22px; min-height: 92px; display: grid; place-items: center; }
+  .tile .frame .glyph { font-size: 28px; font-weight: 800; letter-spacing: -.5px; }
+  .tile .label { padding: 10px 14px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #475; background: #fff; }
+  .tile.ink .label { background: var(--paper); border-top-color: transparent; color: #475; }
+  .tile .label code { font-family: var(--font-mono); font-size: 11px; color: #222; }
+  .tile .label a { font-size: 11px; color: #0E1116; border-bottom: 1px dotted #999; text-decoration: none; }
+</style></head>
+<body><div class="card">
+  <div class="row">
+    <div class="tile">
+      <div class="frame"><span class="glyph">Three colors. That's the system.</span></div>
+      <div class="label"><span>Headline tile · paper</span><a href="#">Read</a></div>
+    </div>
+    <div class="tile ink">
+      <div class="frame"><span class="glyph">Quiet competence.</span></div>
+      <div class="label"><span>Headline tile · ink</span><code>~/notes/01</code></div>
+    </div>
+  </div>
+  <p style="margin:14px 2px 0;font-size:12px;color:var(--fg-2);text-wrap:pretty">Card = <code>1px solid var(--line)</code> + <code>14px</code> radius + label strip with hairline top border. <b>No drop shadow.</b></p>
+</div></body></html>

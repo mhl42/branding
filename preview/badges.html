@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Badges" subtitle="Tags · pills · do/don't states" viewport="700x200" -->
+<html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+  .card { padding: 24px 28px; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .badge { font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 999px; border: 1px solid transparent; line-height: 1.4; letter-spacing: .01em; }
+  .badge.neutral { background: #F1ECE0; color: #0E1116; border-color: rgba(14,17,22,.10); }
+  .badge.outline { background: transparent; color: #0E1116; border-color: rgba(14,17,22,.22); }
+  .badge.accent { background: rgba(245,197,24,.18); color: #0E1116; border-color: rgba(245,197,24,.55); }
+  .badge.ink { background: #0E1116; color: #FAF6EE; }
+  .badge.do { background: rgba(0,176,90,.10); color: #0a6b3a; border-color: rgba(0,176,90,.35); }
+  .badge.dont { background: rgba(220,53,69,.08); color: #8a1d2a; border-color: rgba(220,53,69,.30); }
+  .dot { width:6px; height:6px; border-radius:99px; display:inline-block; vertical-align: middle; margin-right: 6px; }
+  h4 { margin: 0 0 10px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--fg-3); font-weight: 500; }
+  .group + .group { margin-top: 14px; }
+</style></head>
+<body><div class="card">
+  <div class="group">
+    <h4>Tags · pills</h4>
+    <div class="row">
+      <span class="badge neutral">Audit</span>
+      <span class="badge neutral">Agent design</span>
+      <span class="badge outline">Education</span>
+      <span class="badge outline">Safety</span>
+      <span class="badge accent">2024 → 2025</span>
+      <span class="badge ink">Selected · 7</span>
+    </div>
+  </div>
+  <div class="group">
+    <h4>State · do / don't</h4>
+    <div class="row">
+      <span class="badge do"><span class="dot" style="background:#0a6b3a"></span>Shipped</span>
+      <span class="badge accent"><span class="dot" style="background:#b08d04"></span>In review</span>
+      <span class="badge dont"><span class="dot" style="background:#8a1d2a"></span>Blocked</span>
+    </div>
+  </div>
+</div></body></html>

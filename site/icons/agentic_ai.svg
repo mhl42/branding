@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 440" role="img" aria-labelledby="title desc">
+<title id="title">Agentic AI</title>
+<desc id="desc">A small robot connected to decision nodes.</desc>
+
+<defs>
+  
+</defs>
+
+<rect class="line" x="96" y="198" width="198" height="146" rx="58"></rect>
+<rect class="line" x="132" y="238" width="126" height="64" rx="30"></rect>
+<circle class="accent" cx="168" cy="270" r="9"></circle>
+<circle class="accent" cx="222" cy="270" r="9"></circle>
+<path class="line" d="M70 252 v44 M320 252 v44"></path>
+<path class="line" d="M195 198 v-52"></path>
+<circle class="line" cx="195" cy="124" r="17"></circle>
+<path class="line" d="M294 270 h54"></path>
+<path class="line" d="M348 270 v-92 h64"></path>
+<path class="line" d="M348 270 v92 h64"></path>
+<path class="line" d="M348 270 h64"></path>
+<rect class="line" x="412" y="148" width="46" height="46" rx="4"></rect>
+<path class="accent" d="M435 246 l31 31 l-31 31 l-31 -31 Z"></path>
+<circle class="line" cx="435" cy="392" r="24"></circle>
+<path class="line" stroke-dasharray="12 14" d="M316 178 h32 M348 178 v92 M348 270 v92"></path>
+
+</svg>

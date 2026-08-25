@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 440" role="img" aria-labelledby="title desc">
+<title id="title">AI Security</title>
+<desc id="desc">A shield marked 42 with a small orbital path.</desc>
+
+<defs>
+  
+</defs>
+
+<path class="line" d="M256 70 L380 122 V230 C380 318 326 386 256 430 C186 386 132 318 132 230 V122 Z"></path>
+<path class="line" d="M256 95 L353 136 V226 C353 296 313 350 256 389 C199 350 159 296 159 226 V136 Z"></path>
+<text class="num" x="256" y="250" text-anchor="middle">42</text>
+<path class="line" d="M82 274 C160 210 331 206 426 250"></path>
+<path class="accent" d="M430 251 C444 261 441 279 425 284"></path>
+<circle class="accent" cx="420" cy="279" r="12"></circle>
+<path class="accent" d="M66 184 h10 M66 208 h14 M66 232 h18"></path>
+
+</svg>

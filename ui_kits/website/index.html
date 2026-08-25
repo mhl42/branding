@@ -1,0 +1,861 @@
+<!doctype html>
+<!-- @dsCard group="UI Kit — Website" name="Website — mhl42.ai" subtitle="Faithful recreation from live source — hero, services, sample work, contact" viewport="1280x900" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mostly Harmless — AI Lab &amp; Studio</title>
+<meta name="description" content="An AI lab. Security, training, agentic systems, and quiet research." />
+<meta property="og:title" content="Mostly Harmless" />
+<meta property="og:description" content="An AI lab. Security, training, agentic systems, and quiet research." />
+<meta property="og:image" content="/assets/og-image.png" />
+<meta property="og:url" content="https://mhl42.ai/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/svg+xml" href="../../site/favicon.svg" />
+<style>
+  /* Inter — self-hosted (offline-safe). Mirrors colors_and_type.css. */
+  @font-face { font-family:"Inter"; font-style:normal; font-weight:400; font-display:swap; src:url("../../fonts/Inter-Regular.woff2") format("woff2"); }
+  @font-face { font-family:"Inter"; font-style:normal; font-weight:500; font-display:swap; src:url("../../fonts/Inter-Medium.woff2") format("woff2"); }
+  @font-face { font-family:"Inter"; font-style:normal; font-weight:700; font-display:swap; src:url("../../fonts/Inter-Bold.woff2") format("woff2"); }
+  @font-face { font-family:"Inter"; font-style:normal; font-weight:800; font-display:swap; src:url("../../fonts/Inter-ExtraBold.woff2") format("woff2"); }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Mostly Harmless",
+  "alternateName": "Beyer Ventures S.L.",
+  "url": "https://mhl42.ai",
+  "logo": "https://mhl42.ai/assets/og-image.png",
+  "image": "https://mhl42.ai/assets/og-image.png",
+  "email": "info@mhl42.ai",
+  "description": "An AI lab. Security, training, agentic systems, and quiet research.",
+  "founder": { "@type": "Person", "name": "Stefan Beyer" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C/ Ausias March 47-6",
+    "addressLocality": "Alboraya",
+    "addressRegion": "Valencia",
+    "postalCode": "46120",
+    "addressCountry": "ES"
+  },
+  "vatID": "ESB16767576",
+  "knowsAbout": ["AI security", "Agentic AI", "AI safety", "Machine learning training", "AI research"]
+}
+</script>
+<style>
+  :root{
+    --ink:#0E1116;
+    --paper:#FAF6EE;
+    --bg:var(--ink);
+    --fg:rgba(250,246,238,.88);
+    --fg-strong:rgba(250,246,238,.92);
+    --fg-soft:rgba(250,246,238,.66);
+    --fg-faint:rgba(250,246,238,.42);
+    --gold:#F5C518;
+    --teal:#3DD3C2;
+    --plum:#B07AC7;
+    --coral:#FF7A8A;
+    --line:rgba(250,246,238,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{
+    background:var(--bg);
+    color:var(--fg);
+    font-family:"Inter",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    font-feature-settings:"cv11","ss01","ss03";
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+    overflow-x:hidden;
+  }
+  a{color:inherit}
+
+  /* ------------ Nav ------------ */
+  nav{
+    position:absolute;top:0;left:0;right:0;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 40px;z-index:10;
+  }
+  nav .brand{display:flex;align-items:center;text-decoration:none}
+  nav .brand img{width:104px;height:104px;display:block}
+  @media (max-width: 720px){
+    nav .brand img{width:72px;height:72px}
+  }
+  nav .links{display:flex;gap:28px;font-size:14px;color:var(--fg-soft)}
+  nav .links a{text-decoration:none;transition:color .2s}
+  nav .links a:hover{color:var(--fg)}
+
+  /* ------------ Hero ------------ */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+    padding:120px 40px 60px;
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    pointer-events:none;
+  }
+  .hero-bg svg{width:100%;height:100%;display:block}
+  .hero-bg .bloom{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 60%, rgba(245,197,24,.06), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 50% 50%, rgba(110,42,140,.10), transparent 65%);
+  }
+
+  .hero-inner{
+    position:relative;z-index:2;
+    text-align:center;
+    max-width:760px;
+  }
+  .hero-logo{
+    display:block;width:96px;height:96px;
+    margin:0 auto 32px;
+    filter:drop-shadow(0 0 24px rgba(245,197,24,.08));
+  }
+  .hero h1{
+    font-size:clamp(48px,9vw,108px);
+    font-weight:800;
+    letter-spacing:-.04em;
+    line-height:1;
+    margin-bottom:22px;
+    color:rgba(250,246,238,.84);
+  }
+  .hero .tagline{
+    font-size:clamp(15px,1.6vw,19px);
+    color:var(--fg-soft);
+    max-width:46ch;margin:0 auto;
+    letter-spacing:-.005em;
+  }
+  .hero .underline{
+    display:inline-block;width:48px;height:3px;background:var(--gold);
+    margin:36px auto 0;
+  }
+
+  /* twinkle on the brightest stars */
+  @keyframes twinkle {
+    0%,100%{opacity:var(--op,.8)}
+    50%{opacity:calc(var(--op,.8) * .35)}
+  }
+  .hero-bg .twinkle{animation:twinkle 4s ease-in-out infinite}
+
+  /* orbit + satellite */
+  @keyframes orbit {
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+  }
+  .orbit-group{transform-origin:center;animation:orbit 28s linear infinite}
+
+  /* ------------ Services ------------ */
+  .services{
+    padding:120px 40px;
+    border-top:1px solid var(--line);
+    max-width:1180px;margin:0 auto;
+  }
+  .services .label{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--fg-faint);margin-bottom:14px;
+  }
+  .services h2{
+    font-size:clamp(28px,4vw,44px);
+    font-weight:800;letter-spacing:-.02em;line-height:1.1;
+    margin-bottom:60px;max-width:18ch;
+    color:rgba(250,246,238,.88);
+  }
+  .grid{
+    display:grid;grid-template-columns:repeat(2,1fr);
+    gap:1px;background:var(--line);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .grid > div{
+    background:var(--bg);
+    padding:34px 30px;
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:20px;
+    align-items:start;
+  }
+  .grid > div > .icon{
+    width:64px;height:55px;display:block;
+  }
+  .grid > div > .copy{min-width:0}
+  .grid h3{
+    font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    font-weight:700;margin-bottom:14px;
+  }
+  .grid h3 .num{color:var(--fg-faint);margin-right:10px;font-weight:500}
+  .grid > div:nth-child(1) h3{color:var(--coral)}
+  .grid > div:nth-child(2) h3{color:var(--gold)}
+  .grid > div:nth-child(3) h3{color:var(--teal)}
+  .grid > div:nth-child(4) h3{color:var(--plum)}
+  .grid p{
+    font-size:18px;color:var(--fg);max-width:32ch;
+    letter-spacing:-.005em;
+  }
+
+  /* ------------ Sample work ------------ */
+  .sample{
+    padding:120px 40px;
+    border-top:1px solid var(--line);
+  }
+  .sample-grid{
+    max-width:1180px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:80px;align-items:center;
+  }
+  .sample .label{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--fg-faint);margin-bottom:14px;
+  }
+  .sample h2{
+    font-size:clamp(28px,3.4vw,40px);
+    font-weight:800;letter-spacing:-.02em;line-height:1.1;
+    color:rgba(250,246,238,.88);
+    margin-bottom:22px;max-width:18ch;
+  }
+  .sample p.body{
+    color:var(--fg-soft);font-size:16px;
+    max-width:46ch;margin-bottom:28px;
+  }
+  .sample-cover{
+    position:relative;
+  }
+  .sample-cover a{
+    display:block;border-radius:6px;overflow:hidden;
+    box-shadow:0 18px 50px rgba(0,0,0,0.45), 0 6px 18px rgba(0,0,0,0.3);
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .sample-cover a:hover{
+    transform:translateY(-4px);
+    box-shadow:0 24px 60px rgba(0,0,0,0.55), 0 10px 22px rgba(0,0,0,0.4);
+  }
+  .sample-cover img{
+    display:block;width:100%;height:auto;
+  }
+  .sample-meta{
+    display:flex;gap:18px;flex-wrap:wrap;
+    margin-top:18px;font-size:12px;color:var(--fg-faint);
+    letter-spacing:.04em;
+  }
+  .sample-meta b{color:var(--fg-soft);font-weight:500}
+  .sample-cta{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--gold);color:var(--ink);
+    padding:12px 22px;border-radius:999px;
+    text-decoration:none;
+    font:700 14px/1.4 "Inter",ui-sans-serif,system-ui,sans-serif;
+    transition:filter .2s, transform .2s;
+  }
+  .sample-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .sample-cta svg{width:14px;height:14px}
+  .sample-fineprint{
+    margin-top:14px;font-size:12px;color:var(--fg-faint);
+  }
+  @media (max-width: 840px){
+    .sample{padding:90px 24px}
+    .sample-grid{grid-template-columns:1fr;gap:40px}
+    .sample h2{max-width:none}
+  }
+
+  /* ------------ Contact ------------ */
+  .contact{
+    padding:120px 40px 120px;
+    border-top:1px solid var(--line);
+    position:relative;
+  }
+  .contact .inner{max-width:560px;margin:0 auto}
+  .contact .label{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--fg-faint);margin-bottom:14px;text-align:center;
+  }
+  .contact h2{
+    font-size:clamp(28px,4vw,42px);
+    font-weight:800;letter-spacing:-.02em;line-height:1.1;
+    color:rgba(250,246,238,.88);
+    text-align:center;margin-bottom:48px;max-width:18ch;margin-left:auto;margin-right:auto;
+  }
+  .contact form{display:block}
+  .contact .row{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+    margin-bottom:14px;
+  }
+  .contact label{display:block;margin-bottom:14px}
+  .contact label > span{
+    display:block;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--fg-faint);
+    margin-bottom:8px;
+  }
+  .contact input,.contact textarea{
+    width:100%;padding:12px 14px;
+    background:rgba(250,246,238,.04);
+    border:1px solid var(--line);
+    border-radius:8px;
+    color:var(--fg);
+    font:400 15px/1.5 "Inter",ui-sans-serif,system-ui,sans-serif;
+    transition:border-color .2s, background .2s;
+  }
+  .contact input:focus,.contact textarea:focus{
+    outline:none;
+    border-color:var(--gold);
+    background:rgba(250,246,238,.06);
+  }
+  .contact textarea{resize:vertical;min-height:140px;font-family:inherit}
+  .contact .honeypot{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden}
+  .contact .actions{
+    display:flex;justify-content:space-between;align-items:center;
+    gap:18px;margin-top:18px;flex-wrap:wrap;
+  }
+  .contact button[type="submit"]{
+    background:var(--gold);
+    color:var(--ink);
+    border:none;
+    padding:12px 28px;
+    border-radius:999px;
+    font:700 14px/1.4 "Inter",ui-sans-serif,system-ui,sans-serif;
+    cursor:pointer;
+    transition:filter .2s;
+  }
+  .contact button[type="submit"]:hover:not(:disabled){filter:brightness(1.08)}
+  .contact button[type="submit"]:disabled{opacity:.6;cursor:wait}
+  .contact .alt{font-size:13px;color:var(--fg-soft);margin:0}
+  .contact .alt a{color:var(--fg);text-decoration:underline;text-decoration-color:rgba(245,197,24,.5);text-underline-offset:3px}
+  .contact .alt a:hover{text-decoration-color:var(--gold)}
+  .contact .consent{font-size:12px;color:var(--fg-faint);margin:14px 0 0;line-height:1.5}
+  .contact .consent a{color:var(--fg-soft);text-decoration:underline;text-decoration-color:rgba(245,197,24,.35);text-underline-offset:3px}
+  .contact .consent a:hover{color:var(--fg);text-decoration-color:var(--gold)}
+  .contact .status{
+    margin-top:16px;font-size:13px;color:var(--fg-soft);min-height:1.2em;
+  }
+  .contact .status[data-kind="success"]{color:#3DD3C2}
+  .contact .status[data-kind="error"]{color:#FF7A8A}
+
+  @media (max-width: 560px){
+    .contact .row{grid-template-columns:1fr}
+    .contact .actions{flex-direction:column-reverse;align-items:stretch}
+    .contact button[type="submit"]{width:100%}
+    .contact .alt{text-align:center}
+  }
+
+  /* ------------ Footer ------------ */
+  footer{
+    padding:32px 40px 40px;
+    border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;
+    font-size:13px;color:var(--fg-faint);
+  }
+  footer .col strong{color:var(--fg-soft);font-weight:600}
+  footer a{text-decoration:none;color:var(--fg-soft);transition:color .2s}
+  footer a:hover{color:var(--fg)}
+  footer ul{list-style:none;display:flex;gap:22px}
+
+  /* ------------ Responsive ------------ */
+  @media (max-width: 720px){
+    nav{padding:20px}
+    .hero{padding:100px 24px 60px}
+    .services{padding:80px 24px}
+    .grid{grid-template-columns:1fr}
+    .contact{padding:100px 24px}
+    footer{padding:28px 24px;flex-direction:column}
+    footer ul{flex-wrap:wrap}
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .hero-bg .twinkle, .orbit-group{animation:none}
+  }
+</style>
+</head>
+<body data-screen-label="01 Mostly Harmless — Home">
+
+<nav>
+  <a href="/" class="brand" aria-label="Mostly Harmless home">
+    <img src="../../site/mark-dark.svg" alt="MHL · 42" />
+  </a>
+  <div class="links">
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="bloom"></div>
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="planet-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#F5C518" stop-opacity="0.28"/>
+          <stop offset="55%" stop-color="#F5C518" stop-opacity="0.08"/>
+          <stop offset="100%" stop-color="#F5C518" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="nebula-plum" cx="35%" cy="40%" r="55%">
+          <stop offset="0%" stop-color="#7E2EA0" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#7E2EA0" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="nebula-teal" cx="60%" cy="55%" r="50%">
+          <stop offset="0%" stop-color="#0FB5A6" stop-opacity="0.40"/>
+          <stop offset="100%" stop-color="#0FB5A6" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="nebula-coral" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#E0376C" stop-opacity="0.28"/>
+          <stop offset="100%" stop-color="#E0376C" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Nebula glows -->
+      <ellipse cx="220" cy="200" rx="500" ry="360" fill="url(#nebula-plum)"/>
+      <ellipse cx="1380" cy="280" rx="420" ry="280" fill="url(#nebula-teal)"/>
+      <ellipse cx="500" cy="780" rx="380" ry="240" fill="url(#nebula-coral)"/>
+      <!-- Planet horizon lower-right -->
+      <g transform="translate(1500 980)">
+        <circle r="520" fill="url(#planet-glow)"/>
+        <circle r="520" fill="none" stroke="rgba(245,197,24,0.28)" stroke-width="1"/>
+        <circle r="540" fill="none" stroke="rgba(245,197,24,0.10)" stroke-width="1"/>
+      </g>
+
+      <!-- Starfield -->
+      <g class="stars">
+        <circle cx="897.2" cy="247.5" r="0.97" fill="#FAF6EE" opacity="0.45"/>
+<circle cx="939.8" cy="379.7" r="0.71" fill="#FAF6EE" opacity="0.40"/>
+<circle cx="318.1" cy="584.9" r="0.71" fill="#FAF6EE" opacity="0.43"/>
+<circle cx="884.5" cy="725.2" r="0.77" fill="#FAF6EE" opacity="0.30"/>
+<circle cx="1111.6" cy="83.5" r="1.02" fill="#FAF6EE" opacity="0.43"/>
+<circle cx="1382.1" cy="482.6" r="2.16" fill="#FAF6EE" class="twinkle" style="--op:0.91" opacity="0.91"/>
+<circle cx="1305.5" cy="775.5" r="0.95" fill="#FAF6EE" opacity="0.26"/>
+<circle cx="463.0" cy="71.8" r="0.65" fill="#FAF6EE" opacity="0.33"/>
+<circle cx="1131.0" cy="333.2" r="0.73" fill="#FAF6EE" opacity="0.53"/>
+<circle cx="1299.1" cy="154.0" r="0.68" fill="#FAF6EE" opacity="0.36"/>
+<circle cx="1320.3" cy="501.3" r="1.02" fill="#FAF6EE" opacity="0.48"/>
+<circle cx="51.4" cy="283.9" r="0.71" fill="#FAF6EE" opacity="0.53"/>
+<circle cx="1096.5" cy="589.9" r="1.06" fill="#FAF6EE" opacity="0.39"/>
+<circle cx="394.6" cy="505.2" r="0.89" fill="#FAF6EE" opacity="0.52"/>
+<circle cx="350.9" cy="897.8" r="0.65" fill="#FAF6EE" opacity="0.26"/>
+<circle cx="1003.9" cy="712.9" r="0.63" fill="#FAF6EE" opacity="0.36"/>
+<circle cx="1244.0" cy="874.0" r="1.21" fill="#FAF6EE" class="twinkle" style="--op:0.77" opacity="0.77"/>
+<circle cx="1249.4" cy="240.1" r="0.66" fill="#FAF6EE" opacity="0.38"/>
+<circle cx="1526.1" cy="788.3" r="0.85" fill="#FAF6EE" opacity="0.30"/>
+<circle cx="1478.9" cy="268.6" r="0.90" fill="#FAF6EE" opacity="0.30"/>
+<circle cx="1251.1" cy="700.8" r="0.60" fill="#FAF6EE" opacity="0.35"/>
+<circle cx="1486.6" cy="790.8" r="1.38" fill="#FAF6EE" opacity="0.57"/>
+<circle cx="1531.5" cy="77.1" r="0.63" fill="#FAF6EE" opacity="0.48"/>
+<circle cx="968.3" cy="427.8" r="0.73" fill="#FAF6EE" opacity="0.51"/>
+<circle cx="338.9" cy="485.4" r="0.70" fill="#FAF6EE" opacity="0.34"/>
+<circle cx="1327.1" cy="394.3" r="0.66" fill="#FAF6EE" opacity="0.32"/>
+<circle cx="941.3" cy="207.1" r="0.64" fill="#FAF6EE" opacity="0.44"/>
+<circle cx="1448.7" cy="773.7" r="0.72" fill="#FAF6EE" opacity="0.45"/>
+<circle cx="211.7" cy="842.0" r="0.84" fill="#FAF6EE" opacity="0.49"/>
+<circle cx="1011.0" cy="87.2" r="0.81" fill="#FAF6EE" opacity="0.39"/>
+<circle cx="1343.3" cy="885.7" r="0.80" fill="#FAF6EE" opacity="0.35"/>
+<circle cx="1051.1" cy="171.2" r="0.81" fill="#FAF6EE" opacity="0.33"/>
+<circle cx="1477.2" cy="398.8" r="1.53" fill="#FAF6EE" opacity="0.57"/>
+<circle cx="1455.2" cy="872.1" r="1.71" fill="#FAF6EE" opacity="0.60"/>
+<circle cx="342.0" cy="360.9" r="0.79" fill="#FAF6EE" opacity="0.55"/>
+<circle cx="1254.5" cy="409.5" r="1.08" fill="#FAF6EE" opacity="0.55"/>
+<circle cx="1149.5" cy="139.3" r="1.08" fill="#FAF6EE" opacity="0.42"/>
+<circle cx="1196.8" cy="51.4" r="0.85" fill="#FAF6EE" opacity="0.51"/>
+<circle cx="1537.2" cy="72.1" r="0.90" fill="#FAF6EE" opacity="0.45"/>
+<circle cx="191.8" cy="801.3" r="0.90" fill="#FAF6EE" opacity="0.44"/>
+<circle cx="933.9" cy="470.5" r="1.32" fill="#FAF6EE" class="twinkle" style="--op:0.76" opacity="0.76"/>
+<circle cx="633.3" cy="604.5" r="0.76" fill="#FAF6EE" opacity="0.48"/>
+<circle cx="733.3" cy="898.6" r="1.95" fill="#FAF6EE" class="twinkle" style="--op:0.84" opacity="0.84"/>
+<circle cx="1493.2" cy="792.8" r="1.42" fill="#FAF6EE" opacity="0.60"/>
+<circle cx="1364.0" cy="550.5" r="2.36" fill="#FAF6EE" class="twinkle" style="--op:0.8" opacity="0.80"/>
+<circle cx="1086.0" cy="597.0" r="1.28" fill="#FAF6EE" opacity="0.58"/>
+<circle cx="885.2" cy="245.1" r="0.96" fill="#FAF6EE" opacity="0.31"/>
+<circle cx="1061.6" cy="439.7" r="1.71" fill="#FAF6EE" opacity="0.58"/>
+<circle cx="442.7" cy="3.2" r="0.92" fill="#FAF6EE" opacity="0.33"/>
+<circle cx="1259.6" cy="384.9" r="0.64" fill="#FAF6EE" opacity="0.51"/>
+<circle cx="1255.4" cy="751.1" r="0.67" fill="#FAF6EE" opacity="0.29"/>
+<circle cx="1438.4" cy="716.5" r="1.74" fill="#FAF6EE" opacity="0.61"/>
+<circle cx="164.5" cy="702.1" r="1.44" fill="#FAF6EE" class="twinkle" style="--op:0.74" opacity="0.74"/>
+<circle cx="1487.8" cy="778.1" r="2.47" fill="#FAF6EE" class="twinkle" style="--op:0.98" opacity="0.98"/>
+<circle cx="1178.5" cy="299.0" r="1.68" fill="#FAF6EE" class="twinkle" style="--op:0.81" opacity="0.81"/>
+<circle cx="1063.6" cy="708.6" r="1.04" fill="#FAF6EE" opacity="0.51"/>
+<circle cx="1306.5" cy="414.3" r="1.00" fill="#FAF6EE" opacity="0.32"/>
+<circle cx="309.0" cy="295.4" r="1.78" fill="#FAF6EE" opacity="0.63"/>
+<circle cx="1155.0" cy="883.0" r="1.07" fill="#FAF6EE" opacity="0.28"/>
+<circle cx="1002.9" cy="866.3" r="0.65" fill="#FAF6EE" opacity="0.38"/>
+<circle cx="1095.8" cy="545.6" r="0.79" fill="#FAF6EE" opacity="0.42"/>
+<circle cx="1134.1" cy="1.5" r="1.52" fill="#FAF6EE" class="twinkle" style="--op:0.77" opacity="0.77"/>
+<circle cx="1341.4" cy="327.8" r="0.93" fill="#FAF6EE" opacity="0.35"/>
+<circle cx="1356.8" cy="647.8" r="0.75" fill="#FAF6EE" opacity="0.37"/>
+<circle cx="473.0" cy="114.6" r="1.07" fill="#FAF6EE" opacity="0.45"/>
+<circle cx="1303.5" cy="270.9" r="0.60" fill="#FAF6EE" opacity="0.34"/>
+<circle cx="928.0" cy="589.2" r="0.82" fill="#FAF6EE" opacity="0.31"/>
+<circle cx="1441.9" cy="716.4" r="0.64" fill="#FAF6EE" opacity="0.40"/>
+<circle cx="1110.6" cy="736.6" r="0.94" fill="#FAF6EE" opacity="0.32"/>
+<circle cx="39.1" cy="220.4" r="1.02" fill="#FAF6EE" opacity="0.27"/>
+<circle cx="1007.6" cy="175.0" r="0.85" fill="#FAF6EE" opacity="0.32"/>
+<circle cx="883.8" cy="675.9" r="0.65" fill="#FAF6EE" opacity="0.38"/>
+<circle cx="1532.7" cy="466.2" r="0.72" fill="#FAF6EE" opacity="0.50"/>
+<circle cx="1282.3" cy="600.8" r="2.32" fill="#FAF6EE" class="twinkle" style="--op:0.99" opacity="0.99"/>
+<circle cx="1301.5" cy="647.3" r="1.02" fill="#FAF6EE" opacity="0.41"/>
+<circle cx="1391.6" cy="427.2" r="0.72" fill="#FAF6EE" opacity="0.44"/>
+<circle cx="1238.7" cy="564.1" r="0.64" fill="#FAF6EE" opacity="0.34"/>
+<circle cx="511.5" cy="486.1" r="0.72" fill="#FAF6EE" opacity="0.46"/>
+<circle cx="924.2" cy="366.8" r="0.81" fill="#FAF6EE" opacity="0.31"/>
+<circle cx="1447.7" cy="525.7" r="1.03" fill="#FAF6EE" opacity="0.48"/>
+<circle cx="9.4" cy="316.6" r="1.03" fill="#FAF6EE" opacity="0.54"/>
+<circle cx="1196.0" cy="491.5" r="0.71" fill="#FAF6EE" opacity="0.32"/>
+<circle cx="46.4" cy="302.5" r="0.80" fill="#FAF6EE" opacity="0.30"/>
+<circle cx="204.2" cy="560.0" r="0.80" fill="#FAF6EE" opacity="0.42"/>
+<circle cx="1028.4" cy="122.1" r="0.63" fill="#FAF6EE" opacity="0.36"/>
+<circle cx="523.0" cy="685.1" r="0.98" fill="#FAF6EE" opacity="0.50"/>
+<circle cx="131.0" cy="17.4" r="1.10" fill="#FAF6EE" opacity="0.35"/>
+<circle cx="1417.5" cy="586.6" r="1.07" fill="#FAF6EE" opacity="0.31"/>
+<circle cx="243.8" cy="113.6" r="0.88" fill="#FAF6EE" opacity="0.32"/>
+<circle cx="1407.6" cy="151.0" r="0.97" fill="#FAF6EE" opacity="0.28"/>
+<circle cx="1543.7" cy="97.3" r="0.76" fill="#FAF6EE" opacity="0.45"/>
+<circle cx="1152.9" cy="643.5" r="0.95" fill="#FAF6EE" opacity="0.44"/>
+<circle cx="1236.0" cy="765.3" r="0.66" fill="#FAF6EE" opacity="0.55"/>
+<circle cx="1118.9" cy="385.5" r="0.85" fill="#FAF6EE" opacity="0.35"/>
+<circle cx="1445.8" cy="95.0" r="2.34" fill="#FAF6EE" class="twinkle" style="--op:0.97" opacity="0.97"/>
+<circle cx="1179.6" cy="660.4" r="2.09" fill="#FAF6EE" class="twinkle" style="--op:0.96" opacity="0.96"/>
+<circle cx="773.6" cy="392.0" r="0.73" fill="#FAF6EE" opacity="0.51"/>
+<circle cx="939.6" cy="793.5" r="0.83" fill="#FAF6EE" opacity="0.43"/>
+<circle cx="45.9" cy="765.9" r="0.71" fill="#FAF6EE" opacity="0.49"/>
+<circle cx="1408.5" cy="631.1" r="0.61" fill="#FAF6EE" opacity="0.53"/>
+<circle cx="1152.1" cy="439.7" r="0.95" fill="#FAF6EE" opacity="0.44"/>
+<circle cx="1268.7" cy="83.7" r="0.95" fill="#FAF6EE" opacity="0.34"/>
+<circle cx="757.2" cy="477.8" r="0.97" fill="#FAF6EE" opacity="0.35"/>
+<circle cx="1066.4" cy="226.3" r="0.70" fill="#FAF6EE" opacity="0.29"/>
+<circle cx="1219.5" cy="166.6" r="0.84" fill="#FAF6EE" opacity="0.47"/>
+<circle cx="1241.0" cy="254.7" r="0.70" fill="#FAF6EE" opacity="0.32"/>
+<circle cx="22.6" cy="480.7" r="1.09" fill="#FAF6EE" opacity="0.42"/>
+<circle cx="966.9" cy="781.6" r="1.04" fill="#FAF6EE" opacity="0.42"/>
+<circle cx="704.8" cy="165.9" r="1.07" fill="#FAF6EE" opacity="0.39"/>
+<circle cx="1155.7" cy="66.7" r="0.63" fill="#FAF6EE" opacity="0.29"/>
+<circle cx="486.1" cy="894.5" r="0.98" fill="#FAF6EE" opacity="0.43"/>
+<circle cx="1035.3" cy="470.3" r="0.82" fill="#FAF6EE" opacity="0.51"/>
+<circle cx="1090.1" cy="558.9" r="0.97" fill="#FAF6EE" opacity="0.53"/>
+<circle cx="337.6" cy="594.4" r="0.69" fill="#FAF6EE" opacity="0.27"/>
+<circle cx="720.8" cy="534.4" r="0.72" fill="#FAF6EE" opacity="0.46"/>
+<circle cx="1192.4" cy="618.6" r="1.67" fill="#FAF6EE" class="twinkle" style="--op:0.74" opacity="0.74"/>
+<circle cx="1522.4" cy="382.6" r="0.92" fill="#FAF6EE" opacity="0.52"/>
+<circle cx="929.1" cy="149.3" r="0.97" fill="#FAF6EE" opacity="0.42"/>
+<circle cx="199.0" cy="619.8" r="1.07" fill="#FAF6EE" opacity="0.40"/>
+<circle cx="128.7" cy="35.9" r="0.76" fill="#FAF6EE" opacity="0.33"/>
+<circle cx="1539.1" cy="752.4" r="1.08" fill="#FAF6EE" opacity="0.55"/>
+<circle cx="1065.4" cy="36.2" r="0.84" fill="#FAF6EE" opacity="0.45"/>
+<circle cx="1004.9" cy="526.8" r="0.85" fill="#FAF6EE" opacity="0.28"/>
+<circle cx="533.3" cy="603.1" r="1.40" fill="#FAF6EE" class="twinkle" style="--op:0.76" opacity="0.76"/>
+<circle cx="1512.3" cy="732.2" r="0.83" fill="#FAF6EE" opacity="0.34"/>
+<circle cx="1552.3" cy="363.8" r="1.09" fill="#FAF6EE" opacity="0.45"/>
+<circle cx="661.2" cy="168.8" r="0.98" fill="#FAF6EE" opacity="0.44"/>
+<circle cx="1020.0" cy="494.3" r="1.46" fill="#FAF6EE" class="twinkle" style="--op:0.76" opacity="0.76"/>
+<circle cx="1557.0" cy="548.0" r="0.68" fill="#FAF6EE" opacity="0.42"/>
+<circle cx="149.1" cy="893.0" r="1.48" fill="#FAF6EE" opacity="0.59"/>
+<circle cx="1222.9" cy="644.9" r="0.74" fill="#FAF6EE" opacity="0.50"/>
+<circle cx="1047.7" cy="496.1" r="1.06" fill="#FAF6EE" opacity="0.40"/>
+<circle cx="1474.5" cy="248.6" r="1.45" fill="#FAF6EE" class="twinkle" style="--op:0.83" opacity="0.83"/>
+<circle cx="1312.9" cy="254.6" r="0.89" fill="#FAF6EE" opacity="0.55"/>
+<circle cx="237.8" cy="484.7" r="0.88" fill="#FAF6EE" opacity="0.41"/>
+<circle cx="514.8" cy="169.8" r="0.89" fill="#FAF6EE" opacity="0.32"/>
+<circle cx="910.0" cy="670.2" r="1.01" fill="#FAF6EE" opacity="0.37"/>
+<circle cx="1444.7" cy="882.7" r="0.62" fill="#FAF6EE" opacity="0.40"/>
+<circle cx="1391.5" cy="786.8" r="0.86" fill="#FAF6EE" opacity="0.39"/>
+<circle cx="1162.1" cy="589.3" r="0.83" fill="#FAF6EE" opacity="0.54"/>
+<circle cx="1108.3" cy="584.9" r="1.71" fill="#FAF6EE" class="twinkle" style="--op:0.81" opacity="0.81"/>
+<circle cx="506.7" cy="646.8" r="1.04" fill="#FAF6EE" opacity="0.26"/>
+<circle cx="1009.9" cy="828.8" r="2.42" fill="#FAF6EE" class="twinkle" style="--op:0.89" opacity="0.89"/>
+<circle cx="1014.0" cy="785.3" r="0.95" fill="#FAF6EE" opacity="0.52"/>
+<circle cx="1273.8" cy="264.0" r="0.67" fill="#FAF6EE" opacity="0.41"/>
+<circle cx="1268.0" cy="153.0" r="1.04" fill="#FAF6EE" opacity="0.44"/>
+<circle cx="1460.5" cy="128.8" r="0.73" fill="#FAF6EE" opacity="0.33"/>
+<circle cx="1287.4" cy="811.1" r="0.68" fill="#FAF6EE" opacity="0.38"/>
+<circle cx="940.1" cy="575.0" r="0.73" fill="#FAF6EE" opacity="0.50"/>
+<circle cx="615.5" cy="434.9" r="0.89" fill="#FAF6EE" opacity="0.42"/>
+<circle cx="1083.1" cy="880.2" r="0.74" fill="#FAF6EE" opacity="0.42"/>
+<circle cx="1392.3" cy="44.1" r="0.85" fill="#FAF6EE" opacity="0.52"/>
+<circle cx="1278.2" cy="546.4" r="0.92" fill="#FAF6EE" opacity="0.44"/>
+<circle cx="1376.0" cy="593.3" r="1.58" fill="#FAF6EE" class="twinkle" style="--op:0.82" opacity="0.82"/>
+<circle cx="1092.5" cy="396.7" r="0.97" fill="#FAF6EE" opacity="0.28"/>
+<circle cx="1196.0" cy="158.1" r="0.87" fill="#FAF6EE" opacity="0.54"/>
+<circle cx="1461.6" cy="747.4" r="1.01" fill="#FAF6EE" opacity="0.39"/>
+<circle cx="1393.6" cy="304.8" r="1.08" fill="#FAF6EE" opacity="0.29"/>
+<circle cx="1471.8" cy="651.8" r="2.58" fill="#FAF6EE" class="twinkle" style="--op:0.96" opacity="0.96"/>
+<circle cx="1265.1" cy="12.5" r="0.83" fill="#FAF6EE" opacity="0.45"/>
+<circle cx="1282.2" cy="740.2" r="1.27" fill="#FAF6EE" opacity="0.62"/>
+<circle cx="1414.8" cy="505.3" r="1.33" fill="#FAF6EE" opacity="0.57"/>
+<circle cx="1505.7" cy="272.0" r="0.67" fill="#FAF6EE" opacity="0.53"/>
+<circle cx="788.2" cy="87.5" r="1.28" fill="#FAF6EE" opacity="0.69"/>
+<circle cx="1391.3" cy="851.4" r="0.97" fill="#FAF6EE" opacity="0.30"/>
+<circle cx="158.4" cy="440.4" r="1.08" fill="#FAF6EE" opacity="0.26"/>
+<circle cx="709.4" cy="855.5" r="1.26" fill="#FAF6EE" class="twinkle" style="--op:0.76" opacity="0.76"/>
+<circle cx="1564.5" cy="322.8" r="0.69" fill="#FAF6EE" opacity="0.29"/>
+<circle cx="1192.8" cy="596.5" r="0.90" fill="#FAF6EE" opacity="0.26"/>
+<circle cx="1047.6" cy="113.3" r="0.63" fill="#FAF6EE" opacity="0.48"/>
+<circle cx="345.5" cy="782.7" r="0.67" fill="#FAF6EE" opacity="0.52"/>
+<circle cx="1373.4" cy="130.2" r="0.73" fill="#FAF6EE" opacity="0.30"/>
+<circle cx="897.7" cy="13.4" r="1.34" fill="#FAF6EE" opacity="0.65"/>
+<circle cx="83.8" cy="667.5" r="0.97" fill="#FAF6EE" opacity="0.39"/>
+<circle cx="1233.1" cy="98.1" r="1.07" fill="#FAF6EE" opacity="0.26"/>
+<circle cx="1476.5" cy="469.3" r="1.08" fill="#FAF6EE" opacity="0.27"/>
+<circle cx="642.6" cy="617.5" r="1.05" fill="#FAF6EE" opacity="0.27"/>
+<circle cx="973.3" cy="59.1" r="0.92" fill="#FAF6EE" opacity="0.41"/>
+<circle cx="1591.4" cy="477.5" r="0.90" fill="#FAF6EE" opacity="0.28"/>
+<circle cx="1466.7" cy="585.8" r="0.96" fill="#FAF6EE" opacity="0.31"/>
+<circle cx="365.6" cy="305.0" r="0.81" fill="#FAF6EE" opacity="0.28"/>
+<circle cx="1064.2" cy="336.9" r="1.06" fill="#FAF6EE" opacity="0.27"/>
+<circle cx="944.1" cy="86.9" r="1.01" fill="#FAF6EE" opacity="0.42"/>
+<circle cx="898.5" cy="296.7" r="0.78" fill="#FAF6EE" opacity="0.45"/>
+<circle cx="1477.2" cy="649.0" r="2.32" fill="#FAF6EE" class="twinkle" style="--op:0.87" opacity="0.87"/>
+<circle cx="340.4" cy="591.1" r="0.65" fill="#FAF6EE" opacity="0.50"/>
+<circle cx="1220.2" cy="516.7" r="1.71" fill="#FAF6EE" class="twinkle" style="--op:0.84" opacity="0.84"/>
+<circle cx="1302.1" cy="578.4" r="1.06" fill="#FAF6EE" opacity="0.50"/>
+<circle cx="288.7" cy="632.4" r="0.77" fill="#FAF6EE" opacity="0.25"/>
+<circle cx="1269.6" cy="360.7" r="0.92" fill="#FAF6EE" opacity="0.26"/>
+<circle cx="1028.0" cy="377.8" r="0.79" fill="#FAF6EE" opacity="0.47"/>
+<circle cx="1270.5" cy="76.5" r="0.68" fill="#FAF6EE" opacity="0.44"/>
+<circle cx="1067.2" cy="595.7" r="0.82" fill="#FAF6EE" opacity="0.33"/>
+<circle cx="958.3" cy="386.9" r="0.94" fill="#FAF6EE" opacity="0.40"/>
+<circle cx="911.2" cy="355.7" r="0.60" fill="#FAF6EE" opacity="0.34"/>
+<circle cx="219.6" cy="230.0" r="0.60" fill="#FAF6EE" opacity="0.47"/>
+<circle cx="608.3" cy="633.3" r="1.02" fill="#FAF6EE" opacity="0.49"/>
+<circle cx="1378.8" cy="38.1" r="1.06" fill="#FAF6EE" opacity="0.51"/>
+<circle cx="917.4" cy="638.5" r="0.66" fill="#FAF6EE" opacity="0.26"/>
+<circle cx="1282.1" cy="556.3" r="1.75" fill="#FAF6EE" opacity="0.58"/>
+<circle cx="1047.4" cy="530.0" r="0.80" fill="#FAF6EE" opacity="0.34"/>
+<circle cx="532.9" cy="151.3" r="0.66" fill="#FAF6EE" opacity="0.40"/>
+<circle cx="1120.4" cy="654.6" r="1.69" fill="#FAF6EE" opacity="0.62"/>
+<circle cx="315.6" cy="542.2" r="0.93" fill="#FAF6EE" opacity="0.30"/>
+<circle cx="1220.0" cy="679.0" r="0.82" fill="#FAF6EE" opacity="0.53"/>
+<circle cx="1016.5" cy="562.1" r="1.58" fill="#FAF6EE" opacity="0.60"/>
+<circle cx="707.5" cy="272.5" r="0.63" fill="#FAF6EE" opacity="0.40"/>
+<circle cx="723.1" cy="51.2" r="1.25" fill="#FAF6EE" class="twinkle" style="--op:0.81" opacity="0.81"/>
+<circle cx="1303.1" cy="456.4" r="0.88" fill="#FAF6EE" opacity="0.49"/>
+<circle cx="1189.4" cy="728.8" r="0.76" fill="#FAF6EE" opacity="0.39"/>
+<circle cx="99.0" cy="93.2" r="1.41" fill="#FAF6EE" class="twinkle" style="--op:0.76" opacity="0.76"/>
+<circle cx="276.1" cy="223.0" r="0.82" fill="#FAF6EE" opacity="0.41"/>
+<circle cx="596.6" cy="254.6" r="0.77" fill="#FAF6EE" opacity="0.43"/>
+<circle cx="1325.3" cy="59.3" r="0.94" fill="#FAF6EE" opacity="0.34"/>
+<circle cx="1331.7" cy="815.7" r="1.40" fill="#FAF6EE" class="twinkle" style="--op:0.72" opacity="0.72"/>
+<circle cx="559.7" cy="870.9" r="0.80" fill="#FAF6EE" opacity="0.43"/>
+<circle cx="1093.0" cy="339.0" r="1.69" fill="#FAF6EE" class="twinkle" style="--op:0.75" opacity="0.75"/>
+<circle cx="1388.3" cy="616.9" r="0.92" fill="#FAF6EE" opacity="0.38"/>
+<circle cx="580.2" cy="162.2" r="1.07" fill="#FAF6EE" opacity="0.40"/>
+<circle cx="220.1" cy="69.4" r="1.26" fill="#FAF6EE" class="twinkle" style="--op:0.78" opacity="0.78"/>
+
+<!-- 220 stars generated -->
+      </g>
+
+      <!-- Constellation: thin lines connecting some bright stars -->
+      <g stroke="rgba(250,246,238,0.18)" stroke-width="0.6" fill="none" stroke-linecap="round">
+        <polyline points="99.0,93.2 220.1,69.4 309.0,295.4 158.4,440.4 99.0,93.2"/>
+        <polyline points="788.2,87.5 897.7,13.4 1134.1,1.5 1265.1,12.5"/>
+        <polyline points="1382.1,482.6 1487.8,778.1 1471.8,651.8 1364.0,550.5 1382.1,482.6"/>
+      </g>
+
+      <!-- Hyperspace trajectory: thin gold dashed arc with a pulse at the head -->
+      <g opacity="0.45">
+        <path d="M 80 820 Q 700 240 1520 130" fill="none" stroke="#F5C518" stroke-width="1.4" stroke-dasharray="5 7" stroke-linecap="round"/>
+        <circle cx="1520" cy="130" r="3.5" fill="#F5C518"/>
+        <circle cx="1520" cy="130" r="9" fill="none" stroke="#F5C518" stroke-width="0.8" opacity="0.5"/>
+      </g>
+
+      <!-- Orbital system around center (800, 450) -->
+      <g transform="translate(800 450)">
+        <ellipse cx="0" cy="0" rx="380" ry="120" fill="none" stroke="rgba(250,246,238,0.10)" stroke-width="1"/>
+        <ellipse cx="0" cy="0" rx="380" ry="120" fill="none" stroke="rgba(250,246,238,0.10)" stroke-width="1" transform="rotate(60)"/>
+        <ellipse cx="0" cy="0" rx="380" ry="120" fill="none" stroke="rgba(250,246,238,0.10)" stroke-width="1" transform="rotate(-60)"/>
+
+        <!-- Static satellite — small white pinprick on orbit 2 -->
+        <g transform="rotate(60)">
+          <circle cx="-380" cy="0" r="3" fill="rgba(250,246,238,0.75)"/>
+          <circle cx="-380" cy="0" r="8" fill="none" stroke="rgba(250,246,238,0.25)" stroke-width="0.8"/>
+        </g>
+
+        <!-- Static satellite — slightly larger, on orbit 3 -->
+        <g transform="rotate(-60)">
+          <circle cx="290" cy="-92" r="2.2" fill="rgba(250,246,238,0.6)"/>
+        </g>
+
+        <!-- Animated satellite (the gold one) -->
+        <g class="orbit-group">
+          <g transform="translate(380 0)">
+            <circle r="6" fill="#F5C518"/>
+            <circle r="14" fill="none" stroke="#F5C518" stroke-width="1" opacity=".35"/>
+          </g>
+        </g>
+
+        <!-- Core point at orbital center -->
+        <g>
+          <circle r="1.6" fill="#F5C518"/>
+          <circle r="6" fill="none" stroke="#F5C518" stroke-width="1" opacity="0.30"/>
+          <circle r="14" fill="none" stroke="#F5C518" stroke-width="1" opacity="0.10"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <h1>Mostly<br>Harmless</h1>
+    <p class="tagline">An AI lab building, securing, and teaching the systems that build the systems — quietly, and with a towel.</p>
+    <span class="underline" aria-hidden="true"></span>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <p class="label">What we do</p>
+  <h2>We build, secure, and teach AI systems that act on their own.</h2>
+  <div class="grid">
+    <div>
+      <img class="icon" src="../../site/icons/ai_security.svg" alt="" aria-hidden="true"/>
+      <div class="copy">
+        <h3><span class="num">01</span>AI Security</h3>
+        <p>We find what your model didn't expect to be asked. Adversarial testing, threat modeling, and security review for production AI. Most engagements start with a focused assessment — prompt injection, jailbreaks, agent tool misuse — and end with concrete hardening recommendations and a report your auditors will accept.</p>
+      </div>
+    </div>
+    <div>
+      <img class="icon" src="../../site/icons/training.svg" alt="" aria-hidden="true"/>
+      <div class="copy">
+        <h3><span class="num">02</span>Training</h3>
+        <p>Specialized training for technical teams putting AI into production. Practical, deep, and free of magical thinking. Topics range from secure prompting and evaluation harnesses to agent design and deployment operations. Delivered as half-day workshops, multi-day cohort programs, or bespoke curriculum for in-house teams.</p>
+      </div>
+    </div>
+    <div>
+      <img class="icon" src="../../site/icons/agentic_ai.svg" alt="" aria-hidden="true"/>
+      <div class="copy">
+        <h3><span class="num">03</span>Agentic AI</h3>
+        <p>Designing and shipping autonomous systems that mostly behave themselves. From prototype to production. Research agents that synthesise sources, support agents that shorten ticket queues, internal automation that turns five-step processes into one. We work with any model provider and any agent framework — or write the framework when off-the-shelf doesn't fit.</p>
+      </div>
+    </div>
+    <div>
+      <img class="icon" src="../../site/icons/research.svg" alt="" aria-hidden="true"/>
+      <div class="copy">
+        <h3><span class="num">04</span>Research</h3>
+        <p>Public notes from the strange edges of the field — safety, alignment, and the experiments worth telling you about. We share what we learn: write-ups of new attack classes, evaluation methods, and the small tools we wish someone else had built. Read because it's interesting; hire us when it lines up with what you need.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SAMPLE WORK ============ -->
+<section class="sample" id="work">
+  <div class="sample-grid">
+    <div class="sample-cover">
+      <a href="#" onclick="alert('PDF download disabled in design-system preview.'); return false;" target="_blank" rel="noopener" aria-label="Download the threat model PDF">
+        <img src="../../site/threat-model-cover.png"
+             srcset="../../site/threat-model-cover.png 1x, ../../site/threat-model-cover-2x.png 2x"
+             alt="Cover page of an example threat model report" />
+      </a>
+    </div>
+    <div class="sample-copy">
+      <p class="label">An example</p>
+      <h2>What our deliverables look like.</h2>
+      <p class="body">A pre-deployment threat model for an example multi-agent system — the same structure and depth as a real engagement. System context, trust boundaries, prioritised risks, and recommended mitigations. The system is fictional; the format isn't.</p>
+      <a class="sample-cta" href="#" onclick="alert('PDF download disabled in design-system preview.'); return false;" target="_blank" rel="noopener" download>
+        Download example
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 4v12"/>
+          <path d="M6 12l6 6 6-6"/>
+          <path d="M5 20h14"/>
+        </svg>
+      </a>
+      <p class="sample-fineprint">PDF · 240 KB · public example</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="inner">
+    <p class="label">Get in touch</p>
+    <h2>Tell us what you're working on.</h2>
+
+    <form id="contact-form" novalidate>
+      <div class="row">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required maxlength="120" autocomplete="name"/>
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required maxlength="200" autocomplete="email"/>
+        </label>
+      </div>
+      <label>
+        <span>Message</span>
+        <textarea name="message" required minlength="4" maxlength="5000" rows="6"></textarea>
+      </label>
+      <label class="honeypot" aria-hidden="true">
+        Website <input type="text" name="website" tabindex="-1" autocomplete="off"/>
+      </label>
+      <div class="actions">
+        <p class="alt">or email <a href="mailto:info@mhl42.ai">info@mhl42.ai</a></p>
+        <button type="submit">Send message</button>
+      </div>
+      <p class="consent">By sending this message you agree to our <a href="https://mhl42.ai/privacy.html">privacy policy</a>. We use Resend to deliver the message to our inbox.</p>
+      <p class="status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<script>
+(() => {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  const status = form.querySelector('.status');
+  const button = form.querySelector('button[type="submit"]');
+
+  const setStatus = (msg, kind = '') => {
+    status.textContent = msg;
+    status.dataset.kind = kind;
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    setStatus('');
+
+    const data = Object.fromEntries(new FormData(form));
+    if (!data.name || !data.email || !data.message) {
+      setStatus('Please fill out all fields.', 'error');
+      return;
+    }
+
+    button.disabled = true;
+    const original = button.textContent;
+    button.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      let json = {};
+      try { json = await res.json(); } catch {}
+      if (res.ok && json.ok) {
+        form.reset();
+        setStatus("Message sent. We'll be in touch shortly.", 'success');
+      } else {
+        setStatus(json.error || 'Something went wrong. Please email info@mhl42.ai directly.', 'error');
+      }
+    } catch {
+      setStatus('Network error. Please email info@mhl42.ai directly.', 'error');
+    } finally {
+      button.disabled = false;
+      button.textContent = original;
+    }
+  });
+})();
+</script>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <span>© 2026 Mostly Harmless</span>
+  <ul>
+    <li><a href="https://mhl42.ai/legal.html">Legal</a></li>
+    <li><a href="https://mhl42.ai/privacy.html">Privacy</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

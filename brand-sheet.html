@@ -328,9 +328,17 @@
   <h3>Where things live.</h3>
   <pre style="background:#0E1116;color:#FAF6EE;padding:22px;border-radius:14px;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.7;overflow:auto">/branding
 ├── brand-sheet.html        ← this page
-├── logos/                  ← 14 SVGs (mark, lockups, wordmark · light/dark/mono)
+├── README.md               ← voice, visual foundations, iconography rules
+├── SKILL.md                ← Agent Skill manifest — point Claude at this repo
+├── colors_and_type.css     ← design tokens · color, type, spacing, motion
+├── presentation-rules.md   ← deck-specific rules (supersede the general ones)
+├── logos/                  ← 17 SVGs (mark, lockups, name lockup, wordmark)
 ├── icons/                  ← app icons + favicons (SVG)
 ├── social/                 ← OG image, LinkedIn, X, email sig, avatar (SVG)
+├── fonts/                  ← Inter .woff2 · 400 / 500 / 700 / 800
+├── site/                   ← mhl42.ai assets — marks, section icons, covers
+├── preview/                ← 18 design-system review cards (one HTML each)
+├── ui_kits/website/        ← mhl42.ai recreation, built from live source
 └── png/
     ├── logos/              ← logo PNGs at 256–2000px
     ├── icons/              ← favicon PNGs at 16/32/64/192, app icons at 256/512/1024
@@ -338,7 +346,7 @@
 </section>
 
 <footer>
-  <p>SVGs ship Inter as <strong>outlined paths</strong> — they render identically anywhere with no font dependency, even when emailed, embedded in PDFs, or imported into Figma. PNGs are pre-rendered at the practical sizes for tools that don't accept SVG. To regenerate everything, run <code>generate_brand_inter.py</code> followed by <code>export_pngs.py</code>.</p>
+  <p>SVGs ship Inter as <strong>outlined paths</strong> — they render identically anywhere with no font dependency, even when emailed, embedded in PDFs, or imported into Figma. PNGs are pre-rendered at the practical sizes for tools that don't accept SVG. Design tokens live in <code>colors_and_type.css</code>; the written rules live in <code>README.md</code> and <code>presentation-rules.md</code>.</p>
 </footer>
 
 </body>
