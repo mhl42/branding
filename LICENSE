@@ -17,8 +17,9 @@ authorized agents:
     light, dark, monochrome).
   - The "Element 42" tile design.
   - The accompanying wordmark "mhl42.ai".
-  - All app icons, favicons, social banners, and derivative artwork
-    contained in the logos/, icons/, social/, and png/ directories.
+  - All app icons, favicons, social banners, editorial illustrations, and
+    derivative artwork contained in the logos/, icons/, social/,
+    illustrations/, and png/ directories.
 
 You may NOT, without prior written permission from Beyer Ventures, S.L.:
 
@@ -42,9 +43,9 @@ For any use beyond the above, contact info@mhl42.ai.
 2. CODE AND STRUCTURE
 ---------------------
 
-The HTML, CSS, and document structure of brand-sheet.html and other
-non-asset files in this repository are made available under the
-MIT License:
+The HTML and CSS of brand-sheet.html and tokens.css, and the document
+structure of the other non-asset files in this repository, are made
+available under the MIT License:
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the

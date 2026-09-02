@@ -4,9 +4,12 @@
 <meta charset="utf-8" />
 <title>Mostly Harmless · MHL · 42 — Brand Sheet</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:"Inter";font-weight:400;font-display:swap;src:url("fonts/Inter-Regular.woff2") format("woff2")}
+  @font-face{font-family:"Inter";font-weight:500;font-display:swap;src:url("fonts/Inter-Medium.woff2") format("woff2")}
+  @font-face{font-family:"Inter";font-weight:700;font-display:swap;src:url("fonts/Inter-Bold.woff2") format("woff2")}
+  @font-face{font-family:"Inter";font-weight:800;font-display:swap;src:url("fonts/Inter-ExtraBold.woff2") format("woff2")}
+</style>
 <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
 <style>
   :root{
@@ -21,7 +24,7 @@
     -webkit-font-smoothing:antialiased; line-height:1.5; font-feature-settings: "cv11", "ss01", "ss03";}
   header{padding:56px 56px 24px;border-bottom:1px solid var(--line)}
   header h1{margin:0;font-size:34px;letter-spacing:-.01em}
-  header p{margin:6px 0 0;color:#475;max-width:62ch}
+  header p{margin:6px 0 0;color:rgba(14,17,22,.68);max-width:62ch}
   section{padding:40px 56px;border-bottom:1px solid var(--line)}
   section h2{margin:0 0 4px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#7a7a7a}
   section h3{margin:4px 0 22px;font-size:24px;letter-spacing:-.01em}
@@ -33,7 +36,7 @@
   .tile.ink{background:var(--ink)}
   .tile .frame{display:grid;place-items:center;padding:28px;min-height:160px}
   .tile .frame img{max-width:100%;max-height:200px;height:auto;display:block}
-  .tile .label{padding:10px 14px;border-top:1px solid var(--line);font-size:12px;color:#475;display:flex;justify-content:space-between;gap:8px;background:#fff}
+  .tile .label{padding:10px 14px;border-top:1px solid var(--line);font-size:12px;color:rgba(14,17,22,.68);display:flex;justify-content:space-between;gap:8px;background:#fff}
   .tile.ink .label{background:var(--paper);border-color:transparent}
   .tile .label code{font-family: ui-monospace, Menlo, monospace; font-size:11px; color:#222}
   .tile .label a{color:#0E1116;text-decoration:none;border-bottom:1px dotted #999}
@@ -52,7 +55,7 @@
   .rule.do{border-color:rgba(0,176,90,.4); background:rgba(0,176,90,.04)}
   .rule.dont{border-color:rgba(220,53,69,.35); background:rgba(220,53,69,.04)}
   .rule h4{margin:0 0 6px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
-  .rule p{margin:0;color:#475;font-size:14px}
+  .rule p{margin:0;color:rgba(14,17,22,.68);font-size:14px}
   footer{padding:28px 56px 56px;color:#666;font-size:13px}
   @media (max-width: 900px){
     header,section,footer{padding-left:20px;padding-right:20px}
@@ -66,7 +69,7 @@
 
 <header>
   <h1>Mostly Harmless · MHL · 42</h1>
-  <p>Brand sheet for <strong>mhl42.ai</strong> — AI security consulting, agentic AI, education, safety, intelligent apps. All assets live alongside this file in <code>/branding</code>. SVG is canonical; PNG exports are in <code>/png</code> for tools that need raster.</p>
+  <p>Brand sheet for <strong>Mostly Harmless</strong>, the AI security consultancy at <strong>mhl42.ai</strong>. Every asset lives alongside this file. SVG is canonical; PNG exports are in <code>/png</code> for tools that need raster. The written rules are in <code>GUIDELINES.md</code>.</p>
 </header>
 
 <!-- =============== COLORS =============== -->
@@ -78,19 +81,19 @@
       <div class="swatch dark" style="background:#0E1116">
         <div><b>Ink</b><span>#0E1116</span></div>
       </div>
-      <p style="margin:10px 2px 0;font-size:13px;color:#475">Primary. Strokes, type, dark backgrounds.</p>
+      <p style="margin:10px 2px 0;font-size:13px;color:rgba(14,17,22,.68)">Primary. Strokes, type, dark backgrounds.</p>
     </div>
     <div>
       <div class="swatch light" style="background:#FAF6EE;border-color:rgba(14,17,22,.18)">
         <div><b>Paper</b><span>#FAF6EE</span></div>
       </div>
-      <p style="margin:10px 2px 0;font-size:13px;color:#475">Bright background. Warmer than pure white — closer to a book page.</p>
+      <p style="margin:10px 2px 0;font-size:13px;color:rgba(14,17,22,.68)">Bright background. Warmer than pure white — closer to a book page.</p>
     </div>
     <div>
       <div class="swatch light" style="background:#F5C518">
         <div><b>Don't-Panic Gold</b><span>#F5C518</span></div>
       </div>
-      <p style="margin:10px 2px 0;font-size:13px;color:#475">Single accent — the dot, accent rules, link underlines, callouts. Use sparingly.</p>
+      <p style="margin:10px 2px 0;font-size:13px;color:rgba(14,17,22,.68)">Single accent — the dot, accent rules, link underlines, callouts. Use sparingly.</p>
     </div>
   </div>
 </section>
@@ -99,7 +102,7 @@
 <section>
   <h2>02 · Typography</h2>
   <h3>Inter — by Rasmus Andersson, free forever.</h3>
-  <p style="color:#475;font-size:14px;max-width:62ch;margin:0 0 22px">Used in every SVG (text outlined to paths so files are self-contained) and in this sheet via Google Fonts. Weights: 400 / 500 / 700 / 800. <a href="https://rsms.me/inter/" style="color:#0E1116">rsms.me/inter</a></p>
+  <p style="color:rgba(14,17,22,.68);font-size:14px;max-width:62ch;margin:0 0 22px">Used in every SVG (text outlined to paths so files are self-contained) and in this sheet from <code>fonts/</code>. Weights: 400 / 500 / 700 / 800. <a href="https://rsms.me/inter/" style="color:#0E1116">rsms.me/inter</a></p>
   <div>
     <div class="typeline">
       <div class="label">Display / 800</div>
@@ -111,7 +114,7 @@
     </div>
     <div class="typeline">
       <div class="label">Body / 400</div>
-      <div class="sample" style="font-size:16px">We design, ship, and audit AI systems — from agents that take real actions to the safety surfaces around them.</div>
+      <div class="sample" style="font-size:16px">We review, test and design agentic systems: the agents, the tools and credentials they use, and the infrastructure they run on.</div>
     </div>
     <div class="typeline">
       <div class="label">Caption / 500 tracked</div>
@@ -119,10 +122,9 @@
     </div>
     <div class="typeline">
       <div class="label">Mono</div>
-      <div class="sample" style="font-family:ui-monospace,Menlo,monospace;font-size:14px">mhl42.ai · stefan@mhl42.ai · &lt;MHL/42&gt;</div>
+      <div class="sample" style="font-family:ui-monospace,Menlo,monospace;font-size:14px">mhl42.ai · info@mhl42.ai · 01 · Services</div>
     </div>
   </div>
-  <p style="margin-top:20px;color:#475;font-size:13px;max-width:62ch">Current system fallback (Inter / system-ui) ships everywhere and renders fine. When the brand graduates, swap for a tighter geometric grotesque — Söhne, GT America, or Neue Haas Grotesk Display — at the same weights (800 / 700 / 500 / 400).</p>
 </section>
 
 <!-- =============== LOGO MARK =============== -->
@@ -254,7 +256,7 @@
       <div class="label"><span>Favicon · outline · 16/32/64</span><a href="icons/favicon-light.svg" download>SVG</a></div>
     </div>
   </div>
-  <p style="margin-top:14px;color:#475;font-size:13px">PNG exports at 16, 32, 64, 192, 256, 512, 1024 are in <code>/png/icons/</code>.</p>
+  <p style="margin-top:14px;color:rgba(14,17,22,.68);font-size:13px">PNG exports at 16, 32, 64, 192, 256, 512, 1024 are in <code>/png/icons/</code>.</p>
 </section>
 
 <!-- =============== SOCIAL =============== -->
@@ -290,9 +292,22 @@
   </div>
 </section>
 
+<!-- =============== ILLUSTRATIONS =============== -->
+<section>
+  <h2>08 · Illustrations</h2>
+  <h3>Ink line art. One gold element.</h3>
+  <p style="color:rgba(14,17,22,.68);font-size:14px;max-width:62ch;margin:0 0 22px">Editorial illustrations for the website and decks. Black line drawing on Paper or Ink, no colour except a single gold accent on the control that matters. Framed with a hairline border and a mono caption strip; never full-bleed.</p>
+  <div class="grid cols-2">
+    <div class="tile"><img src="illustrations/agent-attack-path.jpg" alt="An untrusted email reaches an agent with access to data, email and payments; a consultant places an approval control before the payment" style="display:block;width:100%;height:auto"><div class="label"><span>Agent attack path · paper</span><a href="illustrations/agent-attack-path.jpg" download>JPG</a></div></div>
+    <div class="tile"><img src="illustrations/authority-controls.jpg" alt="An agent is handed a scoped key while a consequential machine stays behind a human approval point" style="display:block;width:100%;height:auto"><div class="label"><span>Authority controls · paper</span><a href="illustrations/authority-controls.jpg" download>JPG</a></div></div>
+    <div class="tile ink"><img src="illustrations/trace-method.jpg" alt="A consultant maps an agentic system, traces a hostile route across a boundary and turns the finding into a control" style="display:block;width:100%;height:auto"><div class="label"><span>Threat modelling method · ink</span><a href="illustrations/trace-method.jpg" download>JPG</a></div></div>
+    <div class="tile ink"><img src="illustrations/security-evaluations.jpg" alt="A hostile document is run through a contained agent; a control stops it and the case is filed for release testing" style="display:block;width:100%;height:auto"><div class="label"><span>Security evaluations · ink</span><a href="illustrations/security-evaluations.jpg" download>JPG</a></div></div>
+  </div>
+</section>
+
 <!-- =============== USAGE =============== -->
 <section>
-  <h2>08 · Usage</h2>
+  <h2>09 · Usage</h2>
   <h3>Do, don't.</h3>
   <div class="rules">
     <div class="rule do">
@@ -324,21 +339,19 @@
 
 <!-- =============== FILE INDEX =============== -->
 <section>
-  <h2>09 · File index</h2>
+  <h2>10 · File index</h2>
   <h3>Where things live.</h3>
   <pre style="background:#0E1116;color:#FAF6EE;padding:22px;border-radius:14px;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.7;overflow:auto">/branding
 ├── brand-sheet.html        ← this page
-├── README.md               ← voice, visual foundations, iconography rules
-├── SKILL.md                ← Agent Skill manifest — point Claude at this repo
-├── colors_and_type.css     ← design tokens · color, type, spacing, motion
-├── presentation-rules.md   ← deck-specific rules (supersede the general ones)
+├── GUIDELINES.md           ← voice, colour, type, the mark, imagery, layout
+├── README.md               ← what is here and how to use it
+├── LICENSE                 ← brand assets reserved · code MIT · Inter OFL
+├── tokens.css              ← design tokens · colour, type, spacing, radii, motion
 ├── logos/                  ← 17 SVGs (mark, lockups, name lockup, wordmark)
 ├── icons/                  ← app icons + favicons (SVG)
-├── social/                 ← OG image, LinkedIn, X, email sig, avatar (SVG)
+├── social/                 ← OG image, LinkedIn, X, email signature, avatar (SVG)
+├── illustrations/          ← editorial line illustrations (JPG)
 ├── fonts/                  ← Inter .woff2 · 400 / 500 / 700 / 800
-├── site/                   ← mhl42.ai assets — marks, section icons, covers
-├── preview/                ← 18 design-system review cards (one HTML each)
-├── ui_kits/website/        ← mhl42.ai recreation, built from live source
 └── png/
     ├── logos/              ← logo PNGs at 256–2000px
     ├── icons/              ← favicon PNGs at 16/32/64/192, app icons at 256/512/1024
@@ -346,7 +359,7 @@
 </section>
 
 <footer>
-  <p>SVGs ship Inter as <strong>outlined paths</strong> — they render identically anywhere with no font dependency, even when emailed, embedded in PDFs, or imported into Figma. PNGs are pre-rendered at the practical sizes for tools that don't accept SVG. Design tokens live in <code>colors_and_type.css</code>; the written rules live in <code>README.md</code> and <code>presentation-rules.md</code>.</p>
+  <p>SVGs ship Inter as <strong>outlined paths</strong> — they render identically anywhere with no font dependency, even when emailed, embedded in PDFs, or imported into Figma. PNGs are pre-rendered at the practical sizes for tools that don't accept SVG. Design tokens live in <code>tokens.css</code>; the written rules live in <code>GUIDELINES.md</code>.</p>
 </footer>
 
 </body>

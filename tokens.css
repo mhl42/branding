@@ -1,6 +1,6 @@
 /* ==========================================================================
-   MHL · 42 — Design Tokens
-   Three colors. Inter. That's the system.
+   Mostly Harmless · MHL · 42 — design tokens
+   Three colours. Inter. That is the system.
    ========================================================================== */
 
 /* ---------- Type · Inter, self-hosted (offline-safe) -------------------- */
@@ -61,8 +61,8 @@
   --bg-inverse:          var(--ink);
 
   --fg-1:                var(--ink);                /* primary text */
-  --fg-2:                #475;                      /* secondary text — `#475566`-ish */
-  --fg-3:                #7a7a7a;                   /* eyebrow / muted */
+  --fg-2:                rgba(14, 17, 22, .68);     /* secondary text */
+  --fg-3:                rgba(14, 17, 22, .48);     /* eyebrow / muted */
   --fg-inverse:          var(--paper);
 
   --line:                rgba(14, 17, 22, .12);
@@ -87,13 +87,13 @@
   --font-display:        var(--font-sans);
 
   /* ---------- Type · OpenType features (Inter-specific) --------------- */
-  --font-features:       "cv11", "ss01", "ss03"; /* @kind font */
+  --font-features:       "cv11", "ss01", "ss03";
 
   /* ---------- Type · Weight scale ------------------------------------- */
-  --w-regular:           400;   /* @kind font */
-  --w-medium:            500;   /* @kind font */
-  --w-bold:              700;   /* @kind font */
-  --w-black:             800;   /* @kind font */
+  --w-regular:           400;
+  --w-medium:            500;
+  --w-bold:              700;
+  --w-black:             800;
 
   /* ---------- Type · Size scale --------------------------------------- */
   --fs-display:          48px;
@@ -107,17 +107,17 @@
   --fs-micro:            11px;
 
   /* ---------- Type · Line height -------------------------------------- */
-  --lh-tight:            1.1;   /* @kind font */
-  --lh-snug:             1.25;  /* @kind font */
-  --lh-normal:           1.5;   /* @kind font */
-  --lh-relaxed:          1.65;  /* @kind font */
+  --lh-tight:            1.1;
+  --lh-snug:             1.25;
+  --lh-normal:           1.5;
+  --lh-relaxed:          1.65;
 
   /* ---------- Type · Letter-spacing ----------------------------------- */
-  --ls-display:          -.015em; /* @kind font */
-  --ls-heading:          -.01em;  /* @kind font */
-  --ls-body:              0;      /* @kind font */
-  --ls-eyebrow:          .18em;   /* @kind font */
-  --ls-tracked:          .22em;   /* @kind font */
+  --ls-display:          -.015em;
+  --ls-heading:          -.01em;
+  --ls-body:              0;
+  --ls-eyebrow:          .18em;
+  --ls-tracked:          .22em;
 
   /* ---------- Spacing scale (4px base) -------------------------------- */
   --s-1:                 4px;
@@ -147,11 +147,11 @@
   --shadow-focus:        0 0 0 3px rgba(245, 197, 24, .35);
 
   /* ---------- Motion -------------------------------------------------- */
-  --dur-fast:            120ms; /* @kind other */
-  --dur-base:            180ms; /* @kind other */
-  --dur-slow:            260ms; /* @kind other */
-  --ease-out:            cubic-bezier(.2, .7, .2, 1);   /* @kind other */
-  --ease-in-out:         cubic-bezier(.45, 0, .25, 1); /* @kind other */
+  --dur-fast:            120ms;
+  --dur-base:            180ms;
+  --dur-slow:            260ms;
+  --ease-out:            cubic-bezier(.2, .7, .2, 1);
+  --ease-in-out:         cubic-bezier(.45, 0, .25, 1);
 }
 
 /* ==========================================================================
